@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NutriSmart – Settings</title>
+  <link rel="stylesheet" href="settings-health.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"/>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- HEADER  -->
+  <header class="header">
+    <a href="dashboard.html" class="back-arrow">
+      <img src="images/Vector.png" alt="Back">
+    </a>
+    <div class="logo">
+      <img src="images/landing-page-logo-image.png" alt="NutriSmart">
+      <span>Settings</span>
+    </div>
+    <div class="more-options">...</div>
+  </header>
+
+  <!-- PAGE TITLE  -->
+  <div class="page-title">
+    <h1>Profile & Settings</h1>
+    <p>Manage your account and health preferences</p>
+  </div>
+
+  <!-- TABS  -->
+  <div class="tabs">
+    <div class="tab" onclick="goTo('settings.html')">
+      <span class="phos-icon">
+                <i class="ph ph-user"></i> Account
+    </div>
+    <div class="tab active" onclick="goTo('settings-health.html')">
+      <i class="ph ph-heart"></i> Health
+    </div>
+    <div class="tab" onclick="goTo('notification.html')">
+      <i class="ph ph-bell"></i> Notifications
+    </div>
+    <div class="tab" onclick="goTo('privacy.html')">
+      <i class="ph ph-lock"></i> Privacy
+    </div>
+  </div>
+
+  <!-- HEALTH FORM (SAME CARD STYLE AS ACCOUNT) -->
+  <div class="form-card">
+    <form>
+      <!-- HEALTH CONDITIONS -->
+      <div class="section">
+        <h3>Health Conditions</h3>
+        <p class="subtitle">Select any conditions you have</p>
+        <div class="checkbox-group">
+          <label><input type="checkbox"> Diabetes</label>
+          <label><input type="checkbox"> Heart Disease</label>
+          <label><input type="checkbox"> High Blood Pressure</label>
+          <label><input type="checkbox"> High Cholesterol</label>
+          <label><input type="checkbox"> Obesity</label>
+        </div>
+      </div>
+
+      <!-- FOOD ALLERGIES -->
+      <div class="section">
+        <h3>Food Allergies</h3>
+        <p class="subtitle">Select your allergies to receive appropriate recommendations</p>
+        <div class="checkbox-group grid-2">
+          <label><input type="checkbox"> Nuts</label>
+          <label><input type="checkbox"> Dairy</label>
+          <label><input type="checkbox"> Gluten</label>
+          <label><input type="checkbox"> Shellfish</label>
+          <label><input type="checkbox"> Soy</label>
+          <label><input type="checkbox"> Eggs</label>
+        </div>
+      </div>
+
+      <!-- DIETARY PREFERENCES -->
+      <div class="section">
+        <h3>Dietary Preferences</h3>
+        <p class="subtitle">Choose your dietary lifestyle</p>
+        <div class="checkbox-group grid-2">
+          <label><input type="checkbox"> Vegetarian</label>
+          <label><input type="checkbox"> Vegan</label>
+          <label><input type="checkbox"> Keto</label>
+          <label><input type="checkbox"> Low-Carb</label>
+          <label><input type="checkbox"> Low-Fat</label>
+          <label><input type="checkbox"> Halal</label>
+          <label><input type="checkbox"> Kosher</label>
+        </div>
+      </div>
+
+      <!-- SAVE BUTTON (SAME AS ACCOUNT) -->
+      <button type="submit" class="save-btn">Save Health Profile</button>
+    </form>
+  </div>
+
+</div>
+
+<script>
+  function goTo(page) {
+    window.location.href = page;
+  }
+</script>
+
+</body>
+</html>

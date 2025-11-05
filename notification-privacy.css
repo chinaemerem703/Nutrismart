@@ -1,0 +1,236 @@
+/* Reset basic spacing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+html{
+    font-size: 62.5%;
+}
+:root {
+  --primary-color1: #d95108;
+  --primary-color2: #000000;
+  --primary-color3: #4caf50;
+  --primary-color4: #212121;
+  --primary-color5: #c8e6ca;
+  --primary-color6: #fff;
+  --primary-color7: #717182;
+  --primary-color8: #ECECF0;
+
+
+}
+
+/* Page layout */
+body {
+  background-color: var(--primary-color8);
+  display: flex;
+  justify-content: center;
+  font-family: 'poppins',sans-serif;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  
+  
+}
+
+/* Main settings container */
+.profile-settings-container {
+  width: 70%;
+  padding: 25px;
+
+}
+
+/* Header */
+.profile-settings-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 3rem;
+  height: 8rem;
+  background-color: var(--primary-color6);
+  padding: 0 2rem;
+  border: 1px solid var(--primary-color8);
+}
+.profile-settings-header .back-arrow {
+  font-size: 2.5rem;
+  color: var(--primary-color4);
+  
+}
+
+.profile-settings-header .logo {
+  height: 7rem;
+}
+
+.profile-settings-header h2 {
+  color: #333;
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+/* Title and description */
+.profile-settings-title {
+  margin-bottom: 20px;
+}
+
+.profile-settings-title h3 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.profile-settings-title p {
+  font-size: 18px;
+  color: var(--primary-color4);
+  margin-bottom: 3rem;
+}
+
+/* Tabs section */
+.profile-settings-tabs {
+  background-color: #f1f1f1;
+  border-radius: 20px;
+  padding: 8px;
+  margin-bottom: 25px;
+  height: 50px;
+  text-decoration: none;
+  border: 3px solid var(--primary-color8);
+}
+.profile-settings-tabs ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+}
+
+.profile-settings-tabs ul li a {
+    text-decoration: none;
+    color: var(--primary-color4);
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 5px 30px;
+}
+.tab {
+  display: flex;
+  align-items: center;
+  gap: 10px; 
+  
+}
+
+.tab:hover {
+  background-color: var(--primary-color6);
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  color: #000;
+  border-radius: 10px;
+}
+
+.tab.phos-icon {
+  margin-right: 20px;
+  font-size: 1.8rem;
+
+}
+
+/* notification card */
+.notification-settings-card {
+  border-radius: 10px;
+  padding: 20px;
+  background-color: var(--primary-color6);
+}
+
+.notification-settings-card h4 {
+  margin-bottom: 8px;
+  font-size: 2rem;
+  font-weight: normal;
+}
+
+.notification-settings-card p {
+  font-size: 18px;
+  color: var(--primary-color4);
+  margin-bottom: 4rem;
+  display: block;
+  margin-bottom: 3px;
+}
+
+/* Individual preference items */
+.notification-settings-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  
+}
+
+/* .notification-settings-item:last-child {
+  border-bottom: none;
+} */
+
+input{
+    width: 20px;
+    height: 20px;
+    accent-color: var(--primary-color1);
+}
+
+/* Save button */
+.save-btn {
+  background-color: var(--primary-color1);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.save-btn:hover {
+  background-color: #e96e00;
+}
+/*privacy section*/
+.privacy-settings-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.privacy-settings-content {
+  margin-bottom: 2rem;
+}
+
+
+.privacy-settings-content h4 {
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  font-weight: lighter;
+}
+
+.privacy-settings-content p {
+  margin-bottom: 2rem;
+  color: #555;
+  font-size: 16px;
+}
+#data{
+  border-bottom: 2px solid var(--primary-color8);
+  padding-bottom: 2rem;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  border: 1px solid #ccc;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  background: var(--primary-color8);
+}

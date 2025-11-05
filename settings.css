@@ -1,0 +1,259 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --orange:        #d95108;
+  --light-orange:  #c43e00;
+  --black:         #000000;
+  --green:         #4caf50;
+  --dark-gray:     #212121;
+  --light-green:   #c8e6ca;
+  --white:         #fff;
+  --gray:          #717182;
+  --light-gray:    #ECECF0;
+  --border-gray:   #f0f0f0;
+  --bg-gray:       #f5f5f5;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--bg-gray);
+  color: var(--dark-gray);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 982px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ========================================
+   HEADER
+   ======================================== */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 20px;
+  background: var(--white);
+  border-bottom: 1px solid #eee;
+}
+
+.back-arrow img {
+  width: 20px;
+  height: 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--black);
+}
+
+.logo img {
+  width: 20px;
+  height: 20px;
+}
+
+/* ========================================
+   SUBTITLE
+   ======================================== */
+.subtitle {
+  padding: 24px 20px 16px;
+  text-align: left;
+}
+
+.subtitle h1 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--black);
+  margin-bottom: 4px;
+}
+
+.subtitle p {
+  font-size: 13px;
+  color: var(--gray);
+}
+
+/* ========================================
+   TABS
+   ======================================== */
+.tabs {
+  display: flex;
+  gap: 8px;
+  padding: 0 20px;
+  margin-bottom: 24px;
+  overflow-x: auto;
+  background: var(--light-gray);
+  border-radius: 24px;
+  padding: 8px;
+}
+
+.tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.tab {
+  flex: 1;
+  min-width: 100px;
+  padding: 8px 16px;
+  background: transparent;
+  border: none;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--gray);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.2s;
+}
+
+.tab.active {
+  background: var(--white);
+  color: var(--black);
+  font-weight: 600;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.tab .icon {
+  font-size: 14px;
+}
+
+/* ========================================
+   FORM CARD
+   ======================================== */
+.form-card {
+  background: var(--white);
+  padding: 24px 20px;
+  border-radius: 12px;
+  margin: 0 20px 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.form-card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--black);
+  margin-bottom: 4px;
+}
+
+.form-card .info {
+  font-size: 13px;
+  color: var(--gray);
+  margin-bottom: 20px;
+}
+
+/* INPUTS */
+.input-row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.input-group {
+  flex: 1;
+}
+
+.input-group label {
+  display: block;
+  font-size: 14px;
+  color: var(--dark-gray);
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid #ddd;
+  border-radius: 10px;
+  font-size: 14px;
+  background: var(--white);
+  transition: border 0.2s;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  outline: none;
+  border-color: var(--orange);
+}
+
+.input-full {
+  margin-bottom: 24px;
+}
+
+/* SAVE BUTTON */
+.save-btn {
+  display: block;
+  margin-top: 20px;
+  padding: 14px;
+  background: var(--orange);
+  color: var(--white);
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.save-btn:hover {
+  background: var(--light-orange);
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
+  .header {
+    padding: 12px 16px;
+  }
+  .subtitle {
+    padding: 20px 16px 12px;
+  }
+  .tabs {
+    padding: 6px;
+    margin: 0 16px 20px;
+  }
+  .tab {
+    min-width: 80px;
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+  .form-card {
+    padding: 20px 16px;
+    margin: 0 16px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
+  .back-arrow {
+    order: -1;
+  }
+  .input-row {
+    flex-direction: column;
+  }
+  .save-btn {
+    padding: 16px;
+  }
+}

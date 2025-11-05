@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Health Profile 3</title>
+  <!-- Phosphor Icons -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"/>
+  <!-- Your CSS -->
+  <link rel="stylesheet" href="healthprofile3.css"/>
+  <!-- Poppins Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+
+  <!-- LOGO -->
+  <div class="image-container">
+    <img src="Frame 30.png" alt="Nutri-Smartlogo">
+  </div>
+
+  <!-- FORM CARD -->
+  <div class="form-card">
+    <h3>Set Up Your Health Profile</h3>
+    <p class="step">Step 3 of 3</p>
+
+    <!-- PROGRESS BAR -->
+    <div class="progress">
+      <div class="progress-bar"></div>
+    </div>
+
+    <form>
+      <!-- FOOD ALLERGIES -->
+      <h4>Food Allergies</h4>
+      <p class="select">Select any allergies you have (optional)</p>
+      <div class="inputs">
+        <label><input type="checkbox" name="allergies" value="nuts"> Nuts</label>
+        <label><input type="checkbox" name="allergies" value="dairy"> Dairy</label>
+        <label><input type="checkbox" name="allergies" value="gluten"> Gluten</label>
+        <label><input type="checkbox" name="allergies" value="shellfish"> Shellfish</label>
+        <label><input type="checkbox" name="allergies" value="soy"> Soy</label>
+        <label><input type="checkbox" name="allergies" value="eggs"> Eggs</label>
+      </div>
+
+      <!-- DIETARY PREFERENCES -->
+      <h4 class="dietary-heading">Dietary Preferences</h4>
+      <p class="select">Select your dietary preferences (optional)</p>
+      <div class="inputs-dietary">
+        <label><input type="checkbox" name="dietary" value="vegetarian"> Vegetarian</label>
+        <label><input type="checkbox" name="dietary" value="vegan"> Vegan</label>
+        <label><input type="checkbox" name="dietary" value="keto"> Keto</label>
+        <label><input type="checkbox" name="dietary" value="low-carb"> Low-Carb</label>
+        <label><input type="checkbox" name="dietary" value="low-fat"> Low-Fat</label>
+        <label><input type="checkbox" name="dietary" value="halal"> Halal</label>
+        <label><input type="checkbox" name="dietary" value="kosher"> Kosher</label>
+      </div>
+
+      <!-- BUTTONS -->
+      <div class="buttons-container">
+        <!-- BACK BUTTON (FIXED) -->
+        <a href="healthprofile2.html" class="back-btn">
+          <i class="ph ph-arrow-left"></i> Back
+        </a>
+        <!-- NEXT BUTTON → DASHBOARD -->
+        <a href="dashboard.html" class="next-btn">
+          Next
+        </a>
+      </div>
+    </form>
+  </div>
+</div>
+
+</body>
+</html>

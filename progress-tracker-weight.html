@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Progress Tracker – Weight</title>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="progress-tracker-weight.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <a href="dashboard.html" class="back-arrow">
+      <img src="images/Vector.png" alt="Back" width="20">
+    </a>
+    <div class="logo">
+      <img src="images/landing-page-logo-image.png" alt="NutriSmart" width="40">
+      <span>Progress tracker</span>
+    </div>
+    <select class="week-select" id="weekSelect">
+      <option value="this-week">This Week</option>
+      <option value="this-month">This month</option>
+      <option value="3-months">3 months</option>
+      <option value="this-year">This year</option>
+    </select>
+  </header>
+
+  <main class="main">
+    <section class="progress-summary">
+      <h2>Your Progress</h2>
+      <p>Track your nutrition journey and celebrate your achievements</p>
+
+      <div class="cards">
+        <div class="card">
+          <h3>Avg Daily Calories</h3>
+          <p class="value">1,979</p>
+          <p class="change positive"><img src="images/Icon (6).png" alt=""> +2.1%</p>
+        </div>
+        <div class="card">
+          <h3>Avg Protein Intake</h3>
+          <p class="value">88g</p>
+          <p class="change positive"><img src="images/Icon (6).png" alt=""> +5.3%</p>
+        </div>
+        <div class="card">
+          <h3>Weight Change</h3>
+          <p class="value">-1.2kg</p>
+          <p class="change neutral"><img src="images/Icon (6).png" alt=""> This month</p>
+        </div>
+        <div class="card">
+          <h3>Streak</h3>
+          <p class="value">7 days</p>
+          <p class="change positive"><img src="images/Icon (6).png" alt=""> Best: 12 days</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="tabs">
+      <button class="tab" onclick="goToTab('calories')">Calories</button>
+      <button class="tab" onclick="goToTab('macros')">Macros</button>
+      <button class="tab active" onclick="goToTab('weight')">Weight</button>
+      <button class="tab" onclick="goToTab('achievement')">Achievement</button>
+    </div>
+
+    <!-- CHART -->
+    <section class="chart-box">
+      <div class="chart-title">Weight Progress</div>
+      <div class="chart-subtitle">Track your weight changes over time</div>
+      <canvas id="weightChart"></canvas>
+    </section>
+
+    <div class="banner">
+      <span class="banner-icon">Great Progress!</span>
+      <div class="banner-text">You've lost 1.2kg this month. Keep up the excellent work!</div>
+    </div>
+  </main>
+
+  <!-- JS at the end -->
+  <script src="macros-weight.js"></script>
+</body>
+</html>

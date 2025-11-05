@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NutriSmart – Weight Tips</title>
+  <link rel="stylesheet" href="nutrition.css">
+</head>
+<body class="tips-body">
+
+<div class="container">
+
+  <!-- HEADER -->
+  <header class="header">
+  <a href="dashboard.html" class="back-arrow">
+    <img src="images/Vector.png" alt="Back" width="20">
+  </a>
+  <div class="logo">
+    <img src="images/landing-page-logo-image.png" alt="NutriSmart" width="40">
+    <span>Nutrition Tips</span>
+  </div>
+</header>
+  <!-- TITLE -->
+  <div class="title-section">
+    <h1 class="subtitle">Expert Nutrition Guidance</h1>
+    <p>Evidence-based tips to support your health journey</p>
+  </div>
+
+  <!-- TABS (Clickable) -->
+  <div class="tabs">
+    <button class="tab" onclick="goToTab('general')">General</button>
+    <button class="tab" onclick="goToTab('diabetes')">Diabetes</button>
+    <button class="tab" onclick="goToTab('heart')">Heart Health</button>
+    <button class="tab active" onclick="goToTab('weight')">Weight</button>
+  </div>
+  
+  <div class="section-header">
+    <h2>Weight Management Tips</h2>
+    <p>Sustainable approaches to healthy weight</p>
+  </div>
+
+  <!-- WEIGHT TIPS -->
+  <div class="tips-list">
+
+    <!-- Tip 1 -->
+    <div class="tip-card">
+      
+      <div class="tip-content">
+        <h4>Eat Mindfully</h4>
+        <p>Eat slowly, without distractions. Pay attention to hunger and fullness cues to prevent overeating.</p>
+      </div>
+      <span class="tag easy">Behavior</span>
+    </div>
+
+    <!-- Tip 2 -->
+    <div class="tip-card">
+     
+      <div class="tip-content">
+        <h4>Increase Protein Intake</h4>
+        <p>Protein increases satiety and preserves muscle mass during weight loss. Include lean protein at every meal.</p>
+      </div>
+      <span class="tag medium">Macronutrients</span>
+    </div>
+
+    <!-- Tip 3 -->
+    <div class="tip-card">
+     
+      <div class="tip-content">
+        <h4>Fill Half Your Plate with Vegetables</h4>
+        <p>Vegetables are low in calories but high in nutrients and fiber, helping you feel full while managing calories.</p>
+      </div>
+      <span class="tag easy">Meal Composition</span>
+    </div>
+
+    <!-- Tip 4 -->
+    <div class="tip-card">
+      
+      <div class="tip-content">
+        <h4>Plan Your Meals</h4>
+        <p>Meal planning helps you make healthier choices and avoid impulsive eating. Prepare meals in advance when possible.</p>
+      </div>
+      <span class="tag medium">Planning</span>
+    </div>
+
+  </div>
+
+  <!-- HELP BOX -->
+  <div class="help-box">
+    <h3>Need More Help?</h3>
+    <p>These tips are general guidelines. For personalized nutrition advice, consult with a registered<br>dietitian or healthcare provider.</p>
+    <button class="btn-find">Find a Nutritionist</button>
+  </div>
+
+</div>
+
+<script>
+  function goToTab(tab) {
+    const pages = {
+      general: 'nutrition.html',
+      diabetes: 'nutrition-diabetes.html',
+      heart: 'nutrition-heart.html',
+      weight: 'nutrition-weight.html'
+    };
+    if (pages[tab]) {
+      window.location.href = pages[tab];
+    }
+  }
+</script>
+
+</body>
+</html>

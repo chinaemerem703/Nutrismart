@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriSmart-FoodDetails</title>
+    <!-- Styles -->
+    <link rel="stylesheet" href="foodDetails.css">
+
+    <!-- Script -->
+    <script src="foodDetails.js" defer></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,
+    wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    
+
+    <!-- Phosphor Icons -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
+    />
+
+     <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
+    />
+</head>
+<body>
+    <!-- Header -->
+    <header class="food-details__header">
+        <button class="food-details__back-btn">
+     <i class="ph ph-arrow-left"></i>
+        </button>
+        <div class="food-details__branding">
+            <img 
+            src="images/nutriSmartLogo.png" 
+            alt="Nutri Smart Logo"
+            class="food-details__logo">
+            <h3 class="food-details__title"><a class="food-details__title-link" href="library.html">Food Details</a></h3>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="food-details">
+    <section class="food-details__cards">
+        <!-- First card -->
+        <div class="food-details__card">
+
+            <!-- Image Section -->
+            <div class="food-details__image-container">
+                <img src="images/jollof-rice.png" alt="Jollof Rice" class="food-details__image">
+                <div class="food-details__suitable">
+                    <img src="images/suitable-icon.png" alt="Suitable icon">
+                    <p>Suitable for you</p>
+                </div>
+            </div>
+
+            <!-- Text Content -->
+            <div class="food-details__content">
+                <div class="food-details__info">
+                    <div class="food-details__meal-info">
+                        <h2 class="food-details__title">Jollof rice</h2>
+                        <p class="food-details__category">Lunch</p>
+                    </div>
+                    <div class="food-details__calories">
+                        <h2 class="calories__value">560</h2>
+                        <p class="calories">Calories</p>
+                    </div>
+                </div>
+                <p class="food-details__description">A nutritious and balanced meal featuring protein-rich quinoa, fresh vegetables, 
+                    and healthy fats. Perfect for maintaining stable blood sugar levels.</p>
+                
+                <div class="food-details__labels">
+                    <span class="food-details__label">High Protein</span>
+                    <span class="food-details__label">Low GI</span>
+                    <span class="food-details__label">Low GI</span>
+                    <span class="food-details__label">Fibre Rich</span>
+                    <span class="food-details__label">Vegetarian</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nutrition Facts -->
+        <section class="food-details__nutrition">
+            <h2 class="food-details__nutrition-title">Nutrition Facts</h2>
+            <p class="food-details__serving">Serving size: 1 plate <br>(350g)</p>
+            <div class="food-details__nutrients">
+                <div class="food-details__nutrient">
+                    <span class="food-details__nutrient-name">Protein</span><br>
+                    <span class="food-details__nutrient-value">25g</span>
+                </div>
+                <div class="food-details__nutrient">
+                    <span class="food-details__nutrient-name">Carbs</span><br>
+                    <span class="food-details__nutrient-value">62g</span>
+                </div>
+                <div class="food-details__nutrient">
+                    <span class="food-details__nutrient-name">Fat</span><br>
+                    <span class="food-details__nutrient-value">18g</span>
+                </div>
+                <div class="food-details__nutrient">
+                    <span class="food-details__nutrient-name">Fibre</span><br>
+                    <span class="food-details__nutrient-value">2.8g</span>
+                </div>
+            </div> 
+
+            <!-- Bars -->
+            <div class="food-details__bars">
+                <div class="food-details__bar">
+                    <p class="food-details__bar-text">Protein
+                        <span class="food-details__bar-value">30% DV</span>
+                    </p>
+                    <div class="food-details__bar-fill">
+                    <div class="food-details__bar-one fill"></div>
+                    </div>
+                </div>
+                <div class="food-details__bar">
+                    <p class="food-details__bar-text">Carbohydrates
+                        <span class="food-details__bar-value">24% DV</span>
+                    </p>
+                    <div class="food-details__bar-fill">
+                    <div class="food-details__bar-two  fill"></div>
+                    </div>
+                </div>
+                <div class="food-details__bar">
+                    <p class="food-details__bar-text">Fat
+                        <span class="food-details__bar-value">15% DV</span>
+                    </p>
+                    <div class="food-details__bar-fill">
+                    <div class="food-details__bar-three fill"></div>
+                    </div>
+                </div>
+                <div class="food-details__bar ">
+                    <p class="food-details__bar-text">Fiber
+                        <span class="food-details__bar-value">29% DV</span>
+                    </p>
+                    <div class="food-details__bar-fill">
+                    <div class="food-details__bar-four fill"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Micronutrients -->
+            <div class="food-details__micronutrients"> 
+                <div class="food-details__micronutrient">Vitamins <span class="food-details__microvalue">A, B12</span></div>
+                <div class="food-details__micronutrient">Sodium <span class="food-details__microvalue">260mg</span></div>
+            </div>
+        </section>
+
+        <!-- Health Benefits -->
+        <section class="food-details__benefits">
+            <h2 class="food-details__benefit-title">Health Benefits</h2>
+            <ul class="food-details__benefit-lists">
+                <li class="food-details__benefit-list">
+                    <i class="ph ph-check-circle"></i>High in protein for sustained energy
+                </li>
+                <li class="food-details__benefit-list">
+                    <i class="ph ph-check-circle"></i>Supports muscle growth and repair
+                </li>
+                <li class="food-details__benefit-list">
+                    <i class="ph ph-check-circle"></i>Provides essential amino acids
+                </li>
+                <li class="food-details__benefit-list">
+                    <i class="ph ph-check-circle"></i>Contains vitamins and minerals that boost immunity
+                </li>
+            </ul>
+        </section>
+
+         <!-- For Your Health -->
+        <section class="food-details__for-health">
+            <h2 class="food-details__health-title">For Your Health</h2>
+            <ul class="food-details__health-lists">
+                <li class="food-details__health-list card-1">
+                    <i class="ph ph-check-circle"></i>
+                    <div class="food-details__health-text">Diabetes
+                        <span class="food-details__health-comment">Eat in moderation</span>
+                    </div>
+                </li>
+                <li class="food-details__health-list card-2">
+                    <i class="ph ph-check-circle"></i>
+                    <div class="food-details__health-text ">Heart Healthy
+                        <span class="food-details__health-comment">Heart-friendly when prepared lightly</span>
+                    </div>
+                </li>
+                <li class="food-details__health-list card-3">
+                    <i class="ph ph-check-circle"></i>
+                    <div class="food-details__health-text">Weight Management
+                        <span class="food-details__health-comment">Good in moderation</span>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Actions -->
+        <section class="food-details__action">
+            <button class="food-details__btn food-details__btn--primary">
+                Add to Meal Plan
+            </button>
+            <button class="food-details__btn food-details__btn--secondary">
+                Save to Favorites
+            </button>
+            <button class="food-details__btn food-details__btn--secondary">
+                Back to Library
+            </button>
+
+        </section>
+    </section>
+    </main>
+</body>
+</html>

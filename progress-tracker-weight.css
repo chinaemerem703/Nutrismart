@@ -1,0 +1,140 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #fafafa;
+  color: #333;
+  padding: 20px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 20px;
+  background: white;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 20px;
+}
+.back-arrow img, .logo img { display: block; }
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+  font-size: 18px;
+  color: #212121;
+  flex-grow: 1;
+}
+.week-select {
+  margin-left: auto;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  background: #f0eafc;
+  color: #6a0dad;
+}
+
+/* Main */
+.main h2 { font-size: 1.5rem; margin-bottom: 5px; }
+.main p { color: #666; font-size: 0.9rem; margin-bottom: 20px; }
+
+/* Cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.card h3 { font-size: 0.9rem; color: #555; }
+.value { font-size: 1.4rem; font-weight: 600; margin: 5px 0; }
+.change { font-size: 0.8rem; }
+.positive { color: #28a745; }
+.neutral { color: #28a745; }
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin: 24px 0;
+  padding: 8px;
+  background: #f5f5f5;
+  border-radius: 18px;
+}
+.tab {
+  flex: 1;
+  padding: 10px 16px;
+  border-radius: 20px;
+  background: transparent;
+  color: #666;
+  font-size: 13px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+}
+.tab.active {
+  background: white;
+  color: #212121;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Chart Box */
+.chart-box {
+  position: relative;
+  height: 400px;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin: 20px 0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+#macroChart, #weightChart {
+  position: absolute;
+  top: 70px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+}
+/* .chart-box {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  margin-bottom: 24px;
+  position: relative;
+  height: 400px; 
+} */
+.chart-title { font-size: 18px; font-weight: 600; margin-bottom: 8px; }
+.chart-subtitle { font-size: 14px; color: #666; margin-bottom: 16px; }
+
+/* Canvas */
+#weightChart {
+  position: absolute;
+  top: 70px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  width: calc(100% - 40px) !important;
+  height: calc(100% - 90px) !important;
+}
+
+/* Banner */
+.banner {
+  background: #e8f5e9;
+  border-left: 4px solid #4caf50;
+  padding: 12px 16px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.banner-icon { font-size: 20px; }
+.banner-text { font-size: 15px; color: #2e7d32; }

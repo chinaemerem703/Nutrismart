@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NutriSmart-Nutrition Tips</title>
+  <link rel="stylesheet" href="nutrition.css">
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="tips-body">
+
+<div class="container">
+
+  <!-- HEADER -->
+   <header class="header">
+  <a href="dashboard.html" class="back-arrow">
+    <img src="images/Vector.png" alt="Back" width="20">
+  </a>
+  <div class="logo">
+    <img src="images/landing-page-logo-image.png" alt="NutriSmart" width="40">
+    <span>Nutrition Tips</span>
+  </div>
+</header>
+
+  <!-- SUBTITLE -->
+  <p class="subtitle">Expert Nutrition Guidance</p>
+  <p class="tagline">Evidence-based tips to support your health journey</p>
+
+  <!-- TABS -->
+  <div class="tabs">
+  <button class="tab active" onclick="goToTab('general')">General</button>
+  <button class="tab" onclick="goToTab('diabetes')">Diabetes</button>
+  <button class="tab" onclick="goToTab('heart')">Heart Health</button>
+  <button class="tab" onclick="goToTab('weight')">Weight</button>
+</div>
+
+  <!-- TIPS LIST -->
+  <section class="tips-section">
+
+    <!-- Tip 1 -->
+    <div class="tip-card">
+      <div class="tip-icon"><img src="images/Container (4).png" alt=""></div>
+      <div class="tip-content">
+        <h4>Stay Hydrated</h4>
+        <p>Drink at least 8 glasses of water daily. Proper hydration supports metabolism and helps control appetite.</p>
+      </div>
+      <span class="tip-tag">High</span>
+    </div>
+
+    <!-- Tip 2 -->
+    <div class="tip-card">
+      <div class="tip-icon"><img src="images/Container (5).png" alt="fiber"></div>
+      <div class="tip-content">
+        <h4>Eat More Fibre</h4>
+        <p>Include 25–30g of fibre daily through whole grains, fruits, and vegetables. Fibre aids digestion and helps manage blood sugar.</p>
+      </div>
+      <span class="tip-tag">High</span>
+    </div>
+
+    <!-- Tip 3 -->
+    <div class="tip-card">
+      <div class="tip-icon"><img src="images/Container (1).png" alt=""></div>
+      <div class="tip-content">
+        <h4>Practice Portion Control</h4>
+        <p>Use smaller plates and be mindful of serving sizes. This helps prevent overeating while ensuring adequate nutrition.</p>
+      </div>
+      <span class="tip-tags">Medium</span>
+    </div>
+
+    <!-- Tip 4 -->
+    <div class="tip-card">
+      <div class="tip-icon"><img src="images/Container (6).png" alt="clock"></div>
+      <div class="tip-content">
+        <h4>Regular Meal Timing</h4>
+        <p>Eat meals at consistent times each day. This helps regulate metabolism and maintain stable energy levels.</p>
+      </div>
+      <span class="tip-tags">Medium</span>
+    </div>
+
+  </section>
+
+  <!-- HELP SECTION -->
+  <section class="help-section">
+    <h3>Need More Help?</h3>
+    <p>These tips are general guidelines. For personalized nutrition advice, consult with a registered <br> dietitian or healthcare provider.</p>
+    <button class="btn-find">Find a Nutritionist</button>
+  </section>
+
+</div>
+<script>
+  function goToTab(tab) {
+    const pages = {
+      general: 'nutrition.html',
+      diabetes: 'nutrition-diabetes.html',
+      heart: 'nutrition-heart.html',
+      weight: 'nutrition-weight.html'
+    };
+    if (pages[tab]) {
+      window.location.href = pages[tab];
+    }
+  }
+</script>
+
+</body>
+</html>

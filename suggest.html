@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nutri Smart App - Meal Suggestions</title>
+  <link rel="stylesheet" href="suggest.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="assets/logo.png" alt="logo">
+      <span>Nutri Smart</span>
+    </div>
+    <ul class="nav-links">
+        <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="#" class="active"><i class="fa-solid fa-utensils"></i> Meal Suggestions</a></li>
+        <li><a href="progress-tracker.html"><i class="fa fa-calendar"></i> Progress</a></li>
+        <li><a href="#"><i class="fa-solid fa-user"></i> Profile</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="meal-header">
+      <div class="header-container">
+        <a href="#"><i class="fa fa-chevron-left"></i></a>
+        <div class="header-text">
+        <h2>Daily Meal Suggestions</h2>
+        <p>Personalized recommendations based on your health goals</p>
+      </div>
+    </div>
+    <button class="refreshBtn"><i class="fa-solid fa-rotate-right"></i> Refresh Suggestions</button>
+    </section>
+
+</main>
+  <section class="meal-tabs">
+    <div class="tab active">
+        🍳 Breakfast
+    </div>
+    <div class="tab">
+        🥪 Lunch
+    </div>
+    <div class="tab">
+        🍛 Dinner
+    </div>
+    <div class="tab">
+        🍎 Snacks
+    </div>
+  </section>
+
+  <section>
+    <div class="card-grid">
+  <div class="recipe-card">
+    <div class="image-container">
+        <div class="recipe-image">
+            <img src="assets/berryoatmeal.png" alt="">
+            <span class="allergen warning">
+                <i class="fa fa-exclamation-circle"></i> Allergen Warning
+            </span>
+        </div>
+    </div>
+    <div class="recipe-content">
+        <h2 class="recipe-title">Berry Oatmeal Bowl</h2>
+        <div class="recipe-meta">
+            <span class="meta-item"><i class="fa fa-clock"></i> 10 min</span>
+            <span class="meta-item"><i class="fa fa-utensils"></i> Easy</span>
+        </div>
+
+        <div class="allergen-box">
+            <i class="fa fa-exclamation-triangle"></i> Contains: Nuts
+        </div>
+
+        <div class="nutrition-info">
+                <span class="icon-fire"><i class="fa fa-fire"></i></span>
+                <div class="cal-info">
+                <span class="cal-value">320</span>
+                <span class="cal-label">cal</span>
+            </div>
+            <div class="macro-info">
+                <span class="macro">
+                <span>P: </span>
+                <span> 12g</span>
+</span>
+<span class="macro">
+                <span>C: </span> 
+                <span>54g</span>
+</span>
+<span class="macro">
+                <span>F: </span>
+                <span>6g</span>
+                </span>
+            </div>
+        </div>
+
+        <div class="tags">
+            <button class="tag">High Fiber</button>
+            <button class="tag">Low Fat</button>
+        </div>
+
+        <p class="ingredients-heading">Ingredients:</p>
+        <p class="ingredients-list">Oats, Berries, Honey, Almonds</p>
+
+        <div class="actions">
+            <button class="add-plan">
+                <i class="fa fa-plus"></i> Add to Plan
+            </button>
+            <button class="view">
+                View Details
+            </button>
+        </div>
+    </div>
+</div>  
+
+<div class="recipe-card">
+    <div class="image-container">
+        <div class="recipe-image">
+            <img src="assets/avocadotoast.png" alt="">
+            <span class="allergen suitable">
+                <i class="fa fa-leaf "></i> Suitable
+            </span>
+        </div>
+    </div>
+    <div class="recipe-content">
+        <h2 class="recipe-title">Avocado Toast with Eggs</h2>
+        <div class="recipe-meta">
+            <span class="meta-item"><i class="fa fa-clock"></i> 15 min</span>
+            <span class="meta-item"><i class="fa fa-utensils"></i> Easy</span>
+        </div>
+<div class="allergen-box-wrapper"></div>
+        <div class="nutrition-info" style="margin-top: -20px;">
+                <span class="icon-fire"><i class="fa fa-fire"></i></span>
+                <div class="cal-info">
+                <span class="cal-value">380</span>
+                <span class="cal-label">cal</span>
+            </div>
+            <div class="macro-info">
+                <span class="macro">
+                <span>P: </span>
+                <span> 18g</span>
+</span>
+<span class="macro">
+                <span>C: </span> 
+                <span>32g</span>
+</span>
+<span class="macro">
+                <span>F: </span>
+                <span>22g</span>
+                </span>
+            </div>
+        </div>
+
+        <div class="tags" style="margin-top: 25px;" >
+            <button class="tag ">High Protein</button>
+            <button class="tag ">Healthy Fat</button>
+        </div>
+
+        <p class="ingredients-heading">Ingredients:</p>
+        <p class="ingredients-list">Wholegrain bread, Avocade, Eggs, Tomatoes</p>
+
+        <div class="actions" style="margin-top: 30px;">
+            <button class="add-plan">
+                <i class="fa fa-plus"></i> Add to Plan
+            </button>
+            <button class="view">
+                View Details
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="recipe-card">
+    <div class="image-container">
+        <div class="recipe-image">
+            <img src="assets/greekyogurt.png" alt="">
+            <span class="allergen warning">
+                <i class="fa fa-exclamation-circle"></i> Allergen Warning
+            </span>
+        </div>
+    </div>
+    <div class="recipe-content">
+        <h2 class="recipe-title">Greek Yogurt Parfait</h2>
+        <div class="recipe-meta">
+            <span class="meta-item"><i class="fa fa-clock"></i> 5 min</span>
+            <span class="meta-item"><i class="fa fa-utensils"></i> Easy</span>
+        </div>
+
+        <div class="allergen-box">
+            <i class="fa fa-exclamation-triangle"></i> Contains: Diary
+        </div>
+
+        <div class="nutrition-info">
+                <span class="icon-fire"><i class="fa fa-fire"></i></span>
+                <div class="cal-info">
+                <span class="cal-value">280</span>
+                <span class="cal-label">cal</span>
+            </div>
+            <div class="macro-info">
+                <span class="macro">
+                <span>P: </span>
+                <span> 20g</span>
+</span>
+<span class="macro">
+                <span>C: </span> 
+                <span>38g</span>
+</span>
+<span class="macro">
+                <span>F: </span>
+                <span>6g</span>
+                </span>
+            </div>
+        </div>
+
+        <div class="tags">
+            <button class="tag ">High Protein</button>
+            <button class="tag ">Probiotic</button>
+        </div>
+
+        <p class="ingredients-heading">Ingredients:</p>
+        <p class="ingredients-list">Greek yogurt,  Granola,  Fresh berries,  Honey</p>
+
+        <div class="actions">
+            <button class="add-plan">
+                <i class="fa fa-plus"></i> Add to Plan
+            </button>
+            <button class="view">
+                View Details
+            </button>
+        </div>
+    </div>
+</div>
+</div>
+      </section>
+      <section>
+        <div class="suggestion-box">
+    <p class="suggestion-text">Want more breakfast options?</p>
+    <button class="suggestions-btn">
+        <i class="fas fa-redo-alt"></i> Load More Suggestions
+    </button>
+</div>
+      </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

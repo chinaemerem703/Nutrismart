@@ -1,0 +1,420 @@
+:root{
+    /* Colors */
+    --color-bg: #fafafa;
+    --color-bg-white: #ffffff;
+    --color-text: #212121;
+    --color-fade: #717182;
+    --color-primary: #d95108;
+    --color-secondary: #4caf50;
+
+    /* Font Sizes */
+    --font-size-base: 1.4rem;
+    --font-size-heading: 1.6rem;
+
+    /* Border Radius */
+    --border-radius: 1rem;
+
+    /* Spacing */
+    --padding-sm: 8px;
+    --padding-md: 1.5rem;
+    --padding-lg: 2.4rem;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+html{
+    font-size: 62.5%; /* 1rem = 10px */
+}
+
+@media (max-width: 1200px) {
+  html {
+    font-size: 58%;
+  }
+}
+
+@media (max-width: 900px) {
+  html {
+    font-size: 55%;
+  }
+
+.food-details__labels{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.food-details{
+    width: 80%;
+    margin: 0 auto;
+}
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 43.7%;
+  }
+}
+
+
+body{
+    background-color: var(--color-bg);
+    color: var(--color-text);
+}
+
+/* Header */
+.food-details__header{
+    display: flex;
+    align-items: center;
+    background-color: var(--color-bg-white);
+    padding: 1.5rem 2rem;
+    gap: 1rem; 
+    width: 100%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.food-details__back-btn{
+    width: 3.6rem;
+    height: 3.6rem;
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    border: none;
+    background-color: transparent;
+    color: var(--color-text);
+    cursor: pointer;
+    font-size: 2.4rem;
+}
+
+.food-details__back-btn>i{
+    width: 2.4rem;
+    height: 2.4rem;
+
+}
+.food-details__back-btn>i a {
+    text-decoration: none;
+}
+
+.food-details__branding{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.food-details__logo{
+    width: 4rem;
+    height: 4.8rem;
+}
+
+.food-details__title-link{
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 2.4rem;
+    color: var(--color-text);
+    font-family: poppins;
+}
+
+.food__details{
+    max-width: 120rem;
+    padding: 2rem;
+}
+
+/* Card */
+.food-details__cards{
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 70rem;
+    gap: 3rem;
+    margin: 2rem auto;
+}
+
+.food-details__card,
+.food-details__nutrition,
+.food-details__benefits,
+.food-details__for-health,
+.food-details__action
+{
+    border: 1px solid #e5e7eb;
+    border-radius: 1.4rem;
+    background-color: var(--color-bg-white);
+    overflow: hidden;
+    
+}
+
+.food-details__image-container{
+    position: relative;
+    width: 100%;
+}
+
+.food-details__image{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.food-details__suitable{
+    position: absolute;
+    top: 1.5rem;
+    right: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--color-secondary);
+    color: var(--color-bg-white);
+    font-size: 1.2rem;
+    font-weight: 400;
+    border-radius: 8px;
+    padding: 4px 1rem;
+}
+
+/* Text Content */
+.food-details__content{
+    padding: 1.5rem;
+}
+
+.food-details__info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.food-details__meal-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.food-details__title{
+    font-size: var(--font-size-heading);
+    color: var(--color-text);
+}
+
+.food-details__category{
+    color: var(--color-fade);
+    font-size: 1.3rem;
+}
+
+.food-details__calories{
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.calories__value{
+    font-size: var(--font-size-heading);
+    color: var(--color-primary);
+}
+
+.calories{
+    font-size: 1.3rem;
+    color: var(--color-fade);
+}
+
+.food-details__description{
+    margin-top: 2rem;
+    font-size: var(--font-size-base);
+    color: var(--color-fade);
+    line-height: 2rem;
+}
+
+.food-details__label{
+    background-color: var(--color-bg);
+    font-weight: 400;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #000000;
+    padding: 2px 8px;
+    margin-right: 6px;
+}
+
+.food-details__labels{
+    margin: 2rem 0 4rem 0;
+}
+
+.food-details__nutrition-title,
+.food-details__benefit-title,
+.food-details__health-title{
+    padding: 0 2rem;
+    font-size: var(--font-size-heading);
+    color: var(--color-text);
+    font-weight: 400;
+    margin-top: 3rem;
+}
+
+.food-details__serving{
+    padding: 0 2rem;
+    color: var(--color-fade);
+    font-size: var(--font-size-base);
+    line-height: 2;
+    margin-bottom: 1rem;
+}
+
+.food-details__nutrients{
+    background-color: #C8E6C94D;
+    color: var(--color-fade);
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: left;
+    padding: 1rem;
+    margin: 2rem;
+    line-height: 1.5;
+    border-radius: var(--border-radius);
+}
+
+.food-details__nutrient-value{
+    color: var(--color-primary);
+    font-size: 1.5rem;
+}
+
+.food-details__bars{
+    margin: 2rem;
+}
+
+.food-details__bar{
+    margin: 1rem 0;
+}
+.food-details__bar-fill{
+    margin-top: 8px;
+    position: relative;
+    width: 100%;
+    border-radius: 8px;
+    background-color: #d9510833;
+
+}
+
+.food-details__bar-text{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+}
+
+.food-details__bar-value{
+    color: var(--color-fade);
+}
+
+.fill{
+    border: 4px solid var(--color-primary);
+    border-radius: 8px;
+    width: 100%;
+    background-color: var(--color-primary);
+}
+
+.food-details__bar-one{
+    width: 30%;
+}
+
+.food-details__bar-two{
+    width: 24%;
+}
+
+.food-details__bar-three{
+    width: 15%;
+}
+
+.food-details__bar-four{
+    width: 29%;
+}
+
+.food-details__micronutrients{
+    display: flex;
+    justify-content: flex-start;
+    gap: 40rem;
+    font-size: 1.3rem;
+    color: var(--color-fade);
+    margin: 2rem;
+
+}
+
+.food-details__micronutrient{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.food-details__microvalue{
+    color: var(--color-text);
+}
+
+.food-details__benefit-lists,
+.food-details__health-lists{
+    margin-top: 1rem;
+    line-height: 2;
+    font-size: 1.3rem;
+    margin: 2rem;
+    list-style: none;
+}
+.food-details__benefit-list{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.food-details__benefit-list i,
+.food-details__health-list i{
+    color: var(--color-secondary);
+    font-size: 2rem;
+}
+
+.food-details__health-list i{
+    margin-top: 3px;
+}
+.food-details__health-list{
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.card-1,
+.card-2,
+.card-3{
+    background-color: #C8E6C94D;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.food-details__health-comment{
+    color: var(--color-fade);
+    display: block;
+}
+
+.food-details__action{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    gap: 1rem;
+    margin-bottom: 8rem;
+}
+
+.food-details__btn{
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    border: 1px solid #e5e7eb;
+    background-color: var(--color-bg);
+}
+
+.food-details__btn--primary{
+    background-color: var(--color-primary);
+    color: var(--color-bg-white);
+}
+
+.food-details__btn--primary:hover{
+    background-color: transparent;
+    color: var(--color-primary);
+}
+
+.food-details__btn--secondary:hover{
+    background-color: var(--color-secondary);
+    color: var(--color-text);
+}

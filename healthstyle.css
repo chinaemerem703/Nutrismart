@@ -1,0 +1,112 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins' , sans-serif;
+}
+:root{
+   --primary-color1: #ffff;
+   --primary-color2:#212121;
+   --primary-color3:#ffe4b5;
+   --primary-color4: #717182;
+   --primary-color5:  #D95108;
+}
+ body{
+    background: #ffff;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+ }
+
+ container{
+    text-align: center;
+ }
+
+ .image-container{
+    margin-bottom: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ .form-card{
+    background: var(--primary-color1);
+    padding: 30px 40px;
+    border-radius: 14px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    width: 732px;
+    height: 464px;
+    text-align: left;
+ }
+ .form-card h3 {
+    font-size: 20px;
+    margin-bottom: 1px;
+ }
+ .step{
+    color: var(--primary-color2);
+    font-size: 16px;
+     margin-bottom: 10px;
+ }
+ .progress{
+    background: var(--primary-color3);
+    height: 5px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+ }
+ .progress-bar{
+    width: 33%;
+    height: 100%;
+    background: var(--primary-color5);
+    border-radius: 10px;
+ }
+
+ h4{
+    margin-bottom: 20px;
+    font-size: 20px;
+ }
+ .form-group{
+    display:inline-block;
+    width:48%;
+    margin-bottom: 15px;
+    margin-right: 10px;
+ }
+ .form-group-width {
+    width: 100%;
+ }
+
+ .form-group label{
+    display: block;
+    font-size: 18px;
+    color: var(--primary-color4);
+    margin-bottom: 5px; 
+ }
+
+ input,
+ select{
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #212121;
+    border-radius: 6px;
+    font-size: 18px;
+ }
+
+ .button-container{
+   display: flex;
+   justify-content: flex-end;
+ }
+ .next-btn{
+    display: inline-block;
+    text-decoration: none;
+    background: var(--primary-color5);
+    color: var(--primary-color1);
+    border: none;
+    border-radius: 16px;
+    font-weight: 500;
+    padding: 12px 30px;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 30px;
+ }
+    
+    

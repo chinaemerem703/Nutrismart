@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriSmart | FoodLibrary</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="library.css">
+
+    <!-- Script -->
+    <script src="library.js" defer></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,
+    wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor icons -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
+    />
+</head>
+<body>
+    <!-- Header -->
+    <header class="food-library__header">
+        <button class="food-library__back-btn">
+            <i class="ph ph-arrow-left"></i>
+        </button>
+        <div class="food-library__branding">
+            <img 
+            src="images/nutriSmartLogo.png" 
+            alt="Nutri Smart Logo"
+            class="food-library__logo">
+            <a href="#" class="food-library__title">Food Library</a>
+        </div>
+    </header>
+    <!-- Main Section -->
+    <main class="food-library">
+        <!-- Suggestion -->
+        <section class="food-library__suggestions">
+            <div class="food-library__suggestion-text">
+                <h1 class="food-library__daily-suggestion">Daily Meal Suggestions</h1>
+                <p class="food-library__health-recommendation">Personalized recommendations based on your health goals</p>
+            </div>
+            
+            <div class="food-library__suggestion-btn">
+                <button class="food-library__refresh-text">
+                    <span class="food-library__refresh-icon"><i class="ph ph-arrows-clockwise"></i></span>Refresh Suggestions</button>
+            </div>
+        </section>
+
+            <!-- Search section -->
+        <section class="food-library__search-section">
+            <div class="food-library__search-bar">
+                <span class="food-library__search-icon"><i class="ph ph-magnifying-glass"></i></span>
+                <input type="text" placeholder="Search foods..." class="food-library__search">
+            </div>
+            <p class="food-library__results-count">Showing 4 of 4 foods</p>    
+        </section>
+
+        <!-- Meal Time -->
+    <section class="food-library__meals">
+                    <span class="food-library__meal food-library__meal--primary">Breakfast</span>
+                    <span class="food-library__meal food-library__meal--secondary">Fruits</span>
+                    <span class="food-library__meal food-library__meal--secondary">Lunch</span>
+                    <span class="food-library__meal food-library__meal--secondary">Dinner</span>
+    </section>
+
+    <section class="food-library__cards">
+
+        <!-- Jollof Rice -->
+        <div class="food-library__card">
+            <div class="food-library__image-container">
+                <img src="images/jollof-rice.png" alt="Jollof Rice" class="food-library__image">
+                <div class="food-library__suitable">
+                    <img src="images/suitable-icon.png" alt="Suitable icon">
+                    <p>Suitable</p>
+                </div>
+            </div>
+            <div class="food-library__content">
+                <div class="food-library__top">
+                    <h2 class="food-library__card-text">Jollof rice</h2>
+                    <p class="food-library__category">Staple</p>
+                </div>
+                <div class="food-library__nutrients">
+                    <div class="food-library__nutrient">
+                        <span class="food-library__nutrient-name">Protein</span><br>
+                        <span class="food-library__nutrient-value">25g</span>
+                    </div>
+                    <div class="food-library__nutrient">
+                        <span class="food-library__nutrient-name">Carbs</span><br>
+                        <span class="food-library__nutrient-value">62g</span>
+                    </div>
+                    <div class="food-library__nutrient">
+                        <span class="food-library__nutrient-name">Fat</span><br>
+                        <span class="food-library__nutrient-value">18g</span>
+                    </div>
+                </div>
+                <div class="food-library__labels">
+                    <span class="food-library__label food-library__label-primary">High Protein</span>
+                    <span class="food-library__label food-library__label-secondary">Low GI</span>
+                </div>
+                <div class="food-library__line"></div>
+                <div class="food-library__bottom">
+                    <p class="food-library__kcal">560 kcal</p>
+                    <div class="food-library__details">
+                        <a href="foodDetails.html" class="food-library__details-link">View Details</a>
+                        <span><i class="ph ph-arrow-right"></i></span>
+                    </div>                       
+                </div>
+            </div>
+        </div>
+
+                <!-- Greek Yoghurt Parfait -->
+        <div class="food-library__card">
+            <div class="food-library__image-container">
+                <img src="images/yoghurt.jpg" alt="Greek Yoghurt Parfait" class="food-library__image">
+                <div class="food-library__allergen">
+                    <span class="food-library__allergen-icon"><i class="ph ph-warning-circle"></i></span>
+                    <a href="allergy.html"><p class="food-library__allergen-warning">Allergen Warning</p></a>
+                </div>
+            </div>
+            <div class="food-library__content">
+                <div class="food-library__top">
+                    <h2 class="food-library__card-text">Greek Yoghurt Parfait</h2>
+                    <p class="food-library__category">Staple</p>
+                </div>
+                <div class="food-library__caution">
+                    <span class="food-library__caution-icon"><i class="ph ph-warning"></i></span>
+                    <span>Contains: Diary</span>
+                </div>
+                <div class="food-library__nutrients">
+                    <div class="food-library__nutrient">
+                        <span class="food-library__nutrient-name">Protein</span><br>
+                        <span class="food-library__nutrient-value">20g</span>
+                    </div>
+                    <div class="food-library__nutrient">
+                        <span class="food-library__nutrient-name">Carbs</span><br>
+                        <span class="food-library__nutrient-value">38g</span>
+                    </div>
+                    <div class="food-library__nutrient">
+                        <span class="food-library__nutrient-name">Fat</span><br>
+                        <span class="food-library__nutrient-value">6g</span>
+                    </div>
+                </div>
+                <div class="food-library__labels">
+                    <span class="food-library__label food-library__label-primary">Low fat</span>
+                    <span class="food-library__label food-library__label-secondary">Protein Rich</span>
+                </div>
+                <div class="food-library__line"></div>
+                <div class="food-library__bottom">
+                    <p class="food-library__kcal">560 kcal</p>
+                    <div class="food-library__details">
+                        <a href="#" class="food-library__details-link">View Details</a>
+                        <span><i class="ph ph-arrow-right"></i></span>
+                    </div>                       
+                </div>
+            </div>
+        </div>
+
+        <!-- Orange -->
+        <div class="food-library__card">
+            <div class="food-library__image-container">
+                <img src="images/orange.png" alt="Orange" class="food-library__card-image">
+                <div class="food-library__suitable">
+                    <img src="images/suitable-icon.png" alt="Suitable icon">
+                    <p>Suitable</p>
+                </div>            
+            </div>
+           <div class="food-library__content">
+                <div class="food-library__top">
+                    <h2 class="food-library__card-text">Orange</h2>
+                    <p class="food-library__category">Fruit</p>
+                </div>
+                <div class="food-library__nutrients">
+                    <div class="food-library__nutrient">
+                        <span class="food-library__nutrient-name">Protein</span><br>
+                        <span class="food-library__nutrient-value">1.2g</span>
+                    </div>
+                    <div class="food-library__nutrient">
+                        <span class="food-library__nutrient-name">Carbs</span><br>
+                        <span class="food-library__nutrient-value">15.4g</span>
+                    </div>
+                    <div class="food-library__nutrient">
+                        <span class="food-library__nutrient-name">Fat</span><br>
+                        <span class="food-library__nutrient-value">0.2g</span>
+                    </div>
+                </div>
+                <div class="food-library__labels">
+                    <span class="food-library__label food-library__label-primary">Heart Healthy</span>
+                    <span class="food-library__label food-library__label-secondary">Omega-3</span>
+                </div>
+                <div class="food-library__line"></div>
+                <div class="food-library__bottom">
+                    <p class="food-library__kcal">62 kcal</p>
+                    <div class="food-library__details">
+                        <a href="#" class="food-library__details-link">View Details</a>
+                        <span><i class="ph ph-arrow-right"></i></span>
+                    </div>
+                </div>  
+            </div>
+        </div>
+
+        <!-- Rice and Sauce -->
+        <div class="food-library__card">
+            <div class="food-library__image-container">
+                <img src="images/rice-and-sauce.png" alt="Rice and Sauce" class="food-library__card-image">
+                <div class="food-library__suitable">
+                    <img src="images/suitable-icon.png" alt="Suitable icon">
+                    <p>Suitable</p>
+                </div>
+            </div>
+           <div class="food-library__content">
+                <div class="food-library__top">
+                    <h2 class="food-library__card-text">Rice and sauce</h2>
+                    <p class="food-library__category">Staple</p>
+                </div>
+                <div class="food-library__nutrients">
+                    <div class="food-library__nutrient">
+                        <span class="food-library__nutrient-name">Protein</span><br>
+                        <span class="food-library__nutrient-value">18g</span>
+                    </div>
+                    <div class="food-library__nutrient">
+                        <span class="food-library__nutrient-name">Carbs</span><br>
+                        <span class="food-library__nutrient-value">60g</span>
+                    </div>
+                    <div class="food-library__nutrient">
+                        <span class="food-library__nutrient-name">Fat</span><br>
+                        <span class="food-library__nutrient-value">20g</span>
+                    </div>
+                </div>
+                <div class="food-library__labels">
+                    <span class="food-library__label food-library__label-primary">Low Calorie</span>
+                    <span class="food-library__label food-library__label-secondary">Fiber Rich</span>
+                </div>
+                <div class="food-library__line"></div>
+                <div class="food-library__bottom">
+                    <p class="food-library__kcal">540 kcal</p>
+                    <div class="food-library__details">
+                        <a href="#" class="food-library__details-link">View Details</a>
+                        <span><i class="ph ph-arrow-right"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ugali -->
+        <div class="food-library__card">
+            <div class="food-library__image-container">
+                <img src="images/ugali.png" alt="Ugali" class="food-library__card-image">
+                <div class="food-library__suitable">
+                    <img src="images/suitable-icon.png" alt="Suitable icon">
+                    <p>Suitable</p>
+                </div>
+            </div>
+           <div class="food-library__content">
+                <div class="food-library__top">
+                    <h3 class="food-library__card-text">Ugali</h3>
+                    <p class="food-library__category">Staple</p>
+                </div>
+                <div class="food-library__nutrients">
+                    <div class="food-library__nutrient">
+                        <span class="food-library__nutrient-name">Protein</span><br>
+                        <span class="food-library__nutrient-value">2g</span>
+                    </div>
+                    <div class="food-library__nutrient">
+                        <span class="food-library__nutrient-name">Carbs</span><br>
+                        <span class="food-library__nutrient-value">25g</span>
+                    </div>
+                    <div class="food-library__nutrient">
+                        <span class="food-library__nutrient-name">Fat</span><br>
+                        <span class="food-library__nutrient-value">1g</span>
+                    </div>
+                </div>
+                <div class="food-library__labels">
+                    <span class="food-library__label food-library__label-primary">Probiotic</span>
+                    <span class="food-library__label food-library__label-secondary">Low Sugar</span>
+                </div>
+                <div class="food-library__line"></div>
+                <div class="food-library__bottom">
+                    <p class="food-library__kcal">130 kcal</p>
+                    <div class="food-library__details">
+                        <a href="#" class="food-library__details-link">View Details</a>
+                        <span><i class="ph ph-arrow-right"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+
+   
+</body>
+</html>

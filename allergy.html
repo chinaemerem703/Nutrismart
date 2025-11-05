@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Food Details — Allergy Warning</title>
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="allergy.css">
+</head>
+<body>
+ <div class="top-label">
+      <img src="assets/logo.png" alt="">
+      <span>Food Details</span>
+    </div>
+  <div class="page-wrap">
+   
+    <article class="card">
+
+      <header class="card-header">
+        <div class="header-left">
+          <div class="icon-round"><i class="fa-solid fa-circle-exclamation"></i></div>
+          <div class="header-text">
+            <h1>Allergy Warning</h1>
+            <p>Some foods may contain allergens that could affect your health</p>
+          </div>
+        </div>
+      </header>
+
+      <div class="card-body">
+
+        <section class="info-block">
+          <div class="info-title"><i class="fa-solid fa-circle-exclamation"></i> Important Information</div>
+          <p class="info-copy">
+            Based on your health profile, we've detected foods that may contain allergens you're sensitive to. <br>
+             Please review carefully before consuming any of the suggested meals.
+          </p>
+        </section>
+
+        <div class="section-title">Foods to Avoid</div>
+
+        <section class="avoid-list">
+
+          <div class="avoid-item">
+            <div class="avoid-item-head">
+              <div class="avoid-title">
+                <strong>Dairy Products</strong>
+                <div class="small-muted">Contains: <span class="muted-strong">Dairy</span></div>
+              </div>
+              <div class="risk">Medium Risk</div>
+            </div>
+
+            <div class="symptoms">
+              <h4>Possible Symptoms:</h4>
+              <ul>
+                <li>Digestive issues</li>
+                <li>Bloating</li>
+                <li>Skin reactions</li>
+              </ul>
+            </div>
+
+            <div class="safe-alt">
+              <div class="alt-title">Safe Alternatives:</div>
+              <div class="alt-tags">
+                <button class="alt-tag">Almond milk</button>
+                <button class="alt-tag">Coconut yogurt</button>
+                <button class="alt-tag">Cashew cheese</button>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="avoid-item">
+            <div class="avoid-item-head">
+              <div class="avoid-title">
+                <strong>Mixed Nuts</strong>
+                <div class="small-muted">Contains: <span class="muted-strong">Nuts</span></div>
+              </div>
+              <div class="risk red">High Risk</div>
+            </div>
+
+            <div class="symptoms">
+              <h4>Possible Symptoms:</h4>
+              <ul>
+                <li>Hives</li>
+                <li>Swelling</li>
+                <li>Difficulty breathing</li>
+              </ul>
+            </div>
+
+            <div class="safe-alt">
+              <div class="alt-title">Safe Alternatives:</div>
+              <div class="alt-tags">
+                <button class="alt-tag">Sunflower seeds</button>
+                <button class="alt-tag">Pumpkin seeds</button>
+              </div>
+            </div>
+
+          </div>
+
+        </section>
+
+       
+        <section class="emergency-block">
+          <h4> Emergency Response</h4>
+          <p>If you experience severe allergic reactions:</p>
+          <ul>
+            <li>Use your epinephrine auto-injector if available</li>
+            <li>Call emergency services immediately(911)</li>
+            <li>Seek medical attention even if symptoms improve</li>
+          </ul>
+
+          <div class="hotline">Emergency hotline <br> 911</div>
+          
+        </section>
+
+  
+        <section class="registered">
+          <h4>Your Registered Allergies</h4>
+          <div class="registered-tags">
+            <span class="pill"> <i class="fa-solid fa-circle-exclamation"></i>Nuts</span>
+            <span class="pill"><i class="fa-solid fa-circle-exclamation"></i>Diary</span>
+          </div>
+          <button class="update">Update Allergies</button>
+        </section>
+
+ 
+        <section class="tips">
+          <h4> <i class="fa-solid fa-circle-exclamation"></i>Safety Tips</h4>
+          <ul>
+            <li>Always read ingredient labels carefully</li>
+            <li>Inform restaurant staff about your allergies</li>
+            <li>Carry emergency medication if prescribed</li>
+            <li>Check for cross-contamination risks</li>
+            <li>When in doubt, avoid the food</li>
+
+          </ul>
+        </section>
+
+      </div>
+
+      <footer class="card-footer">
+        <button class="btn-primary">I Understand - Continue</button>
+         <button class="update">Update Allergies</button>
+      </footer>
+
+    </article>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

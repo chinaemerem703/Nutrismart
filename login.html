@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NutriSmart</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="carrier">
+
+<div class="page">
+
+  <!-- LOGO -->
+  <div class="logo">
+    <img src="images/landing-page-logo-image.png" alt="NutriSmart" width="50">
+    <span>Nutri<span class="span-b">Smart</span></span>
+  </div>
+  <p class="tagline">Your personalized nutrition companion</p>
+
+  <!-- TABS -->
+  <div class="tabs">
+    <button class="tab active" onclick="show('login')">Log In</button>
+    <button class="tab" onclick="show('signup')">Sign Up</button>
+  </div>
+
+  <!-- LOGIN FORM -->
+  <div id="login" class="form-box">
+    <h2>Welcome Back</h2>
+    <p>Enter your credentials to access your account</p>
+
+    <label>Email</label>
+    <input type="email" placeholder="you@example.com">
+
+    <label>Password</label>
+    <input type="password" placeholder="******">
+
+    <button class="btn">Log In</button>
+  </div>
+
+  <!-- SIGN-UP FORM -->
+  <div id="signup" class="form-box" style="display:none;">
+    <h2>Create Account</h2>
+    <p>Get started with your personalized nutrition journey</p>
+
+    <label>Full Name</label>
+    <input type="text" id="signupName" placeholder="John Doe">
+
+    <label>Email</label>
+    <input type="email" id="signupEmail" placeholder="you@example.com">
+
+    <label>Password</label>
+    <input type="password" placeholder="******">
+
+    <button type="button" class="btn" onclick="goToProfile()">Continue</button>
+  </div>
+
+  <div>
+    <a href="index.html" class="back">
+      <img src="images/Vector.png" alt="" class="arrow"> Back to home
+    </a>
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

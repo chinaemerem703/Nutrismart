@@ -1,0 +1,289 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --orange: #d95108;
+  --black: #000000;
+  --green: #4caf50;
+  --dark-gray: #212121;
+  --light-green: #c8e6ca;
+  --light-gray: #ECECF0;
+  --border-gray: #f0f0f0;
+  --bg-gray: #f5f5f5;
+  --text-muted: #777;
+  --text-light: #555;
+}
+
+.tips-body {
+  background: #fff;
+  font-family: 'poppins', sans-serif;
+  color: var(--dark-gray);
+  padding: 0;
+}
+
+.container {
+  max-width: 982px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 20px;
+  border-bottom: 1px solid #eee;
+  background: white;
+}
+
+.back-arrow img {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--black);
+}
+
+.logo img {
+  width: 40px;
+  height: 48px;
+  display: block;
+}
+
+.section-header {
+  padding: 0 20px 16px;
+}
+
+.section-header h2 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--black);
+  margin: 0 0 4px;
+}
+
+.section-header p {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--black);
+  margin: 0 0 4px;
+  line-height: 40px;
+}
+
+.tagline {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 0 0 20px;
+  line-height: 20px;
+}
+
+/* TABS */
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  overflow-x: auto;
+  padding-bottom: 5px;
+  background-color: var(--light-gray);
+  border-radius: 18px;
+  padding: 8px;
+}
+
+.tabs button {
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+.tab {
+  padding: 8px 16px;
+  border-radius: 20px;
+  background: var(--light-gray);
+  color: #666;
+  font-size: 13px;
+  white-space: nowrap;
+  border: none;
+  cursor: pointer;
+}
+
+.tab.active {
+  background: #fff;
+  color: #212121;
+  font-weight: 600;
+}
+
+/* TIP CARD */
+.tip-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: #fff;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.tip-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: var(--green);
+  flex-shrink: 0;
+}
+
+.tip-content {
+  flex: 1;
+}
+
+.tip-content h4 {
+  margin: 0 0 4px;
+  font-size: 15px;
+  color: var(--black);
+}
+
+.tip-content p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--text-light);
+  line-height: 1.5;
+}
+
+.tip-tag {
+  align-self: flex-start;
+  background: var(--orange);
+  color: white;
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.tip-tags {
+  align-self: flex-start;
+  background: var(--light-green);
+  color: #212121;
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+/* HELP SECTION */
+.help-section {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: left;
+  margin-top: 32px;
+  border: 1px solid var(--bg-gray);
+}
+
+.help-section h3 {
+  margin: 0 0 8px;
+  font-size: 14px;
+  color: var(--black);
+}
+
+.help-section p {
+  font-size: 14px;
+  color: #666;
+  margin: 0 0 16px;
+}
+
+.btn-find {
+  background: var(--orange);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.btn-find:hover {
+  background: #c43e00;
+}
+
+/* TAG COLORS */
+.tag {
+  border: 1px solid var(--border-gray);
+  border-radius: 10px;
+  color: #212121;
+}
+
+
+   /* RESPONSIVE  */
+@media (max-width: 768px) {
+  .container {
+    padding: 16px;
+  }
+  .header {
+    padding: 12px 16px;
+    gap: 12px;
+  }
+  .logo {
+    font-size: 16px;
+  }
+  .logo img {
+    width: 32px;
+    height: 38px;
+  }
+  .section-header,
+  .tip-card,
+  .help-section {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+  .tabs {
+    margin: 0 16px 20px;
+    padding: 6px;
+  }
+  .tab {
+    min-width: 80px;
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
+  .back-arrow {
+    order: -1;
+  }
+  .tip-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  .tip-icon {
+    margin: 0 auto 12px;
+  }
+  .help-section {
+    padding: 16px;
+    margin: 24px 16px 16px;
+  }
+  .btn-find {
+    width: 100%;
+  }
+}

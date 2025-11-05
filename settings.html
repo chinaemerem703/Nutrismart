@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NutriSmart – Settings</title>
+  <link rel="stylesheet" href="settings.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"/>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <header class="header">
+    <a href="dashboard.html" class="back-arrow">
+      <img src="images/Vector.png" alt="Back">
+    </a>
+    <div class="logo">
+      <img src="images/landing-page-logo-image.png" alt="NutriSmart">
+      <span>Settings</span>
+    </div>
+    <div class="more-options">...</div>
+  </header>
+
+  <!-- PAGE TITLE -->
+  <div class="page-title">
+    <h1>Profile & Settings</h1>
+    <p>Manage your account and health preferences</p>
+  </div>
+
+  <!-- TABS -->
+  <div class="tabs">
+    <div class="tab active" onclick="goTo('settings.html')">
+      <i class="ph ph-user"></i> Account
+    </div>
+    <div class="tab" onclick="goTo('settings-health.html')">
+      <i class="ph ph-heart"></i> Health
+    </div>
+    <div class="tab" onclick="goTo('notification.html')">
+      <i class="ph ph-bell"></i> Notifications
+    </div>
+    <div class="tab" onclick="goTo('privacy.html')">
+      <i class="ph ph-lock"></i> Privacy
+    </div>
+  </div>
+
+  <!-- ACCOUNT FORM -->
+  <div class="form-card">
+    <form>
+      <div class="section">
+        <h3>Account Information</h3>
+        <p class="subtitle">Update your personal details</p>
+
+        <!-- Full Name -->
+        <div class="input-group">
+          <label>Full Name</label>
+          <input type="text" placeholder="John Doe" value="John">
+        </div>
+
+        <!-- Email -->
+        <div class="input-group">
+          <label>Email</label>
+          <input type="email" placeholder="john@example.com" value="john123@gmail.com">
+        </div>
+
+        <!-- Age & Gender -->
+        <div class="input-row">
+          <div class="input-group half">
+            <label>Age</label>
+            <input type="number" placeholder="25">
+          </div>
+          <div class="input-group half">
+            <label>Gender</label>
+            <select>
+              <option>Select</option>
+              <option>Male</option>
+              <option>Female</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Weight & Height -->
+        <div class="input-row">
+          <div class="input-group half">
+            <label>Weight (kg)</label>
+            <input type="number" placeholder="70">
+          </div>
+          <div class="input-group half">
+            <label>Height (cm)</label>
+            <input type="number" placeholder="175">
+          </div>
+        </div>
+
+        <!-- Activity Level -->
+        <div class="input-group">
+          <label>Activity Level</label>
+          <select>
+            <option>Select activity level</option>
+            <option>Sedentary</option>
+            <option>Lightly Active</option>
+            <option>Moderately Active</option>
+            <option>Very Active</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- SAVE BUTTON -->
+      <button type="submit" class="save-btn">Save Changes</button>
+    </form>
+  </div>
+
+</div>
+
+<script>
+  function goTo(page) {
+    window.location.href = page;
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NutriSmart – Diabetes Tips</title>
+  <link rel="stylesheet" href="nutrition.css">
+</head>
+<body class="tips-body">
+
+<div class="container">
+
+  <!-- HEADER -->
+  <header class="header">
+  <a href="dashboard.html" class="back-arrow">
+    <img src="images/Vector.png" alt="Back" width="20">
+  </a>
+  <div class="logo">
+    <img src="images/landing-page-logo-image.png" alt="NutriSmart" width="40">
+    <span>Nutrition Tips</span>
+  </div>
+</header>
+
+  <!-- TITLE -->
+  <div class="title-section">
+    <h1 class="subtitle">Expert Nutrition Guidance</h1>
+    <p>Evidence-based tips to support your health journey</p>
+  </div>
+
+  <!-- TABS (Clickable) -->
+  <div class="tabs">
+    <button class="tab" onclick="goToTab('general')">General</button>
+    <button class="tab active" onclick="goToTab('diabetes')">Diabetes</button>
+    <button class="tab" onclick="goToTab('heart')">Heart Health</button>
+    <button class="tab" onclick="goToTab('weight')">Weight</button>
+  </div>
+
+  <!-- DIABETES TIPS -->
+  <div class="tips-list">
+
+    <!-- Tip 1 -->
+    <div class="tip-card">
+      
+      <div class="tip-content">
+        <h4>Choose Low GI Foods</h4>
+        <p>Focus on foods with a low glycemic index like quinoa, sweet potatoes, and non-starchy vegetables to maintain stable blood sugar levels.</p>
+      </div>
+      <span class="tag">Blood Sugar Management</span>
+    </div>
+
+    <!-- Tip 2 -->
+    <div class="tip-card">
+      
+        
+      <div class="tip-content">
+        <h4>Monitor Carbohydrate Intake</h4>
+        <p>Count carbs and distribute them evenly throughout the day. Aim for 45-60g per meal depending on your plan.</p>
+      </div>
+      <span class="tag">Meal Planning</span>
+    </div>
+
+    <!-- Tip 3 -->
+    <div class="tip-card">
+     
+      <div class="tip-content">
+        <h4>Include Protein with Each Meal</h4>
+        <p>Protein slows carbohydrate absorption and helps prevent blood sugar spikes. Good sources include lean meats, fish, eggs, and legumes.</p>
+      </div>
+      <span class="tag">Nutrition Balance</span>
+    </div>
+
+    <!-- Tip 4 -->
+    <div class="tip-card">
+      <div class="tip-content">
+        <h4>Limit Added Sugars</h4>
+        <p>Avoid sugary drinks, desserts, and processed foods. Read labels carefully and choose sugar-free alternatives when possible.</p>
+      </div>
+      <span class="tag">Food Choices</span>
+    </div>
+
+  </div>
+
+  <!-- HELP BOX -->
+  <div class="help-box">
+    <h3>Need More Help?</h3>
+    <p>These tips are general guidelines. For personalized nutrition advice, consult with a registered<br>dietitian or healthcare provider.</p>
+    <button class="btn-find">Find a Nutritionist</button>
+  </div>
+
+</div>
+
+<script>
+  function goToTab(tab) {
+    const pages = {
+      general: 'nutrition.html',
+      diabetes: 'nutrition-diabetes.html',
+      heart: 'nutrition-heart.html',
+      weight: 'nutrition-weight.html'
+    };
+    if (pages[tab]) {
+      window.location.href = pages[tab];
+    }
+  }
+</script>
+
+</body>
+</html>

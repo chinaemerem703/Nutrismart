@@ -1,0 +1,198 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+:root {
+  --primary-color1: #fff;
+  --primary-color2: #212121;
+  --primary-color3: #ffe4b5;
+  --primary-color4: #717182;
+  --primary-color5: #D95108;
+  --primary-color6: #4caf50;
+}
+
+body {
+  background: var(--primary-color1);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 60px;
+  padding: 30px;
+}
+
+.container {
+  text-align: center;
+  max-width: 671px;
+  width: 100%;
+}
+
+.image-container {
+  margin-top: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container img {
+  height: auto;
+}
+
+.form-card {
+  background: var(--primary-color1);
+  padding: 30px 40px;
+  border-radius: 14px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 671px;
+  height: auto;
+  min-height: 624px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-card h3 {
+  font-size: 22px;
+  line-height: 1.2;
+  color: var(--primary-color2);
+  margin-bottom: 4px;
+}
+
+.step {
+  color: var(--primary-color2);
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.progress {
+  background: var(--primary-color3);
+  height: 5px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 100%;
+  background: var(--primary-color5);
+  border-radius: 10px;
+}
+
+h4 {
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: var(--primary-color2);
+}
+
+.select {
+  color: var(--primary-color4);
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.inputs,
+.inputs-dietary {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 40px;
+  row-gap: 12px;
+  line-height: 2;
+}
+
+.dietary-heading {
+  margin-top: 20px;
+}
+
+.inputs label,
+.inputs-dietary label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--primary-color2);
+  cursor: pointer;
+}
+
+.inputs input[type="checkbox"],
+.inputs-dietary input[type="checkbox"] {
+  accent-color: var(--primary-color5);
+  width: 18px;
+  height: 18px;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+/* BACK BUTTON (FIXED) */
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  color: var(--primary-color6);
+  border: 2px solid var(--primary-color6);
+  text-decoration: none;
+  border-radius: 16px;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.back-btn i {
+  font-size: 18px;
+}
+
+.back-btn:hover {
+  background: #e8f5e9;
+  color: var(--primary-color6);
+}
+
+/* NEXT BUTTON (NOW A LINK) */
+.next-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background: var(--primary-color5);
+  color: var(--primary-color1);
+  border: none;
+  border-radius: 16px;
+  font-weight: 500;
+  font-size: 14px;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.next-btn:hover {
+  background: #c43e00;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .form-card {
+    padding: 24px 20px;
+  }
+  .inputs,
+  .inputs-dietary {
+    grid-template-columns: 1fr;
+  }
+  .buttons-container {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .back-btn,
+  .next-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

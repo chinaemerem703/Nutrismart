@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notification page</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
+    />
+    <link rel="stylesheet" href="notification-privacy.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="profile-settings-container">
+      <!-- Header -->
+      <div class="profile-settings-header">
+        <span class="back-arrow">
+          <i class="ph ph-arrow-left"></i>
+        </span>
+        <div class="profile-settings-header2">
+          <img src="nutriSmart.png" alt="Logo" class="logo" />
+        </div>
+        <h2>Settings</h2>
+      </div>
+
+      <!-- Page Title -->
+      <div class="profile-settings-title">
+        <h3>Profile & Settings</h3>
+        <p>Manage your account and health preferences</p>
+      </div>
+
+      <!-- Tabs -->
+      <nav class="profile-settings-tabs">
+        <ul>
+          <li>
+            <a href="settings.html" class="tab">
+              <span class="phos-icon">
+                <i class="ph ph-user"></i>
+              </span>
+              Account
+            </a>
+          </li>
+          <li>
+            <a href="settings-health.html" class="tab">
+              <span class="phos-icon">
+                <i class="ph ph-heart"></i>
+              </span>
+              Health
+            </a>
+          </li>
+          <li>
+            <a href="notification.html" class="tab">
+              <span class="phos-icon">
+                <i class="ph ph-bell"></i>
+              </span>
+              Notifications
+            </a>
+          </li>
+          <li>
+            <a href="privacy.html" class="tab">
+              <span class="phos-icon">
+                <i class="ph ph-shield"></i>
+              </span>
+              Privacy
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Notification Preferences -->
+      <div class="notification-settings-card">
+        <h4>Notification Preferences</h4>
+        <p>Choose what updates you want to receive</p>
+
+        <div class="notification-settings-item">
+          <div>
+            <h4>Daily Meal Reminders</h4>
+            <p>Get reminded to log your meals</p>
+          </div>
+          <input type="checkbox" checked />
+        </div>
+
+        <div class="notification-settings-item">
+          <div>
+            <h4>Nutrition Tips</h4>
+            <p>Receive daily nutrition advice</p>
+          </div>
+          <input type="checkbox" checked />
+        </div>
+
+        <div class="notification-settings-item">
+          <div>
+            <h4>Progress Updates</h4>
+            <p>Weekly progress summaries</p>
+          </div>
+          <input type="checkbox" checked />
+        </div>
+
+        <div class="notification-settings-item">
+          <div>
+            <h4>Achievement Alerts</h4>
+            <p>Get notified when you earn badges</p>
+          </div>
+          <input type="checkbox" checked />
+        </div>
+
+        <button class="save-btn">Save Preferences</button>
+      </div>
+    </div>
+  </body>
+</html>
