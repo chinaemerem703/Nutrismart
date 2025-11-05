@@ -243,8 +243,8 @@ body {
 
 @media (max-width: 480px) {
   .header {
-    flex-direction: column;
-    text-align: center;
+    flex-direction: row;
+    text-align: left;
     gap: 8px;
   }
   .back-arrow {

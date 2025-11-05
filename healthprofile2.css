@@ -175,13 +175,35 @@ h4 {
   .form-card {
     padding: 24px 20px;
   }
+
+  
   .buttons-container {
-    flex-direction: column;
+    flex-direction: row !important;      
+    justify-content: space-between;      
+    align-items: stretch;
     gap: 12px;
+    margin-top: 24px;
   }
+
   .back-btn,
   .next-btn {
-    width: 100%;
-    justify-content: center;
+    flex: 1;                             
+    width: auto !important;              
+    justify-content: center;             
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+
+  .back-btn {
+    order: 1;
+  }
+
+  .next-btn {
+    order: 2;
+  }
+
+  
+  .back-btn i {
+    font-size: 16px;
   }
 }

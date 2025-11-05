@@ -393,7 +393,7 @@ input:focus {
 
 /* ========================================
    HEALTH PROFILE PAGES
-   ======================================== */
+   ======================================== 
 .form-card {
   background: var(--white);
   padding: 30px;
@@ -552,7 +552,7 @@ input:focus {
 
 .btn-back:hover {
   background: #e8f5e9;
-}
+} */
 
 /* ========================================
    RESPONSIVE DESIGN
@@ -585,8 +585,10 @@ input:focus {
     width: 100%;
   }
   .page {
-    padding: 20px;
+    padding: 3px;
+    
   }
+  
 }
 /* ========================================
    MOBILE NAV ICON (HAMBURGER)

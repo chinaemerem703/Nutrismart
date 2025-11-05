@@ -181,18 +181,48 @@ h4 {
 @media (max-width: 600px) {
   .form-card {
     padding: 24px 20px;
+    min-height: auto;
   }
+
   .inputs,
   .inputs-dietary {
     grid-template-columns: 1fr;
+    row-gap: 10px;
   }
+
+  .dietary-heading {
+    margin-top: 16px;
+  }
+
+  /* Force buttons to stay horizontal, full width, at edges */
   .buttons-container {
-    flex-direction: column;
+    flex-direction: row !important;
+    justify-content: space-between;
+    align-items: stretch;
     gap: 12px;
+    margin-top: 20px;
+    padding-top: 16px;
   }
+
   .back-btn,
   .next-btn {
-    width: 100%;
+    flex: 1;                    /* Equal width */
+    width: auto !important;     /* Prevent 100% override */
     justify-content: center;
+    padding: 12px 16px;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .back-btn {
+    order: 1;
+  }
+
+  .next-btn {
+    order: 2;
+  }
+
+  .back-btn i {
+    font-size: 16px;
   }
 }

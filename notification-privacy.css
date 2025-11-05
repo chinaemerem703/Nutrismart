@@ -234,3 +234,257 @@ input{
 .btn:hover {
   background: var(--primary-color8);
 }
+@media (max-width: 992px) {
+  .profile-settings-container {
+    width: 85%;
+    padding: 20px;
+  }
+
+  .profile-settings-header {
+    height: 7rem;
+    padding: 0 1.5rem;
+  }
+
+  .profile-settings-header .back-arrow {
+    font-size: 2.2rem;
+  }
+
+  .profile-settings-header .logo {
+    height: 6rem;
+  }
+
+  .profile-settings-header h2 {
+    font-size: 2.2rem;
+  }
+
+  .profile-settings-title h3 {
+    font-size: 2.6rem;
+  }
+
+  .profile-settings-tabs {
+    height: 45px;
+    padding: 6px;
+  }
+
+  .profile-settings-tabs ul li a {
+    font-size: 15px;
+    padding: 5px 20px;
+  }
+
+  .tab.phos-icon {
+    font-size: 1.6rem;
+    margin-right: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-settings-container {
+    width: 90%;
+  }
+
+  .profile-settings-title h3 {
+    font-size: 2.4rem;
+  }
+
+  .profile-settings-title p {
+    font-size: 16px;
+  }
+
+  .profile-settings-tabs ul {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .profile-settings-tabs ul li a {
+    padding: 6px 16px;
+    font-size: 14px;
+  }
+
+  .notification-settings-card h4 {
+    font-size: 1.8rem;
+  }
+
+  .notification-settings-card p {
+    font-size: 15px;
+  }
+
+  .privacy-settings-content h4 {
+    font-size: 1.7rem;
+  }
+
+  .privacy-settings-content p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 58%;
+  }
+
+  .profile-settings-container {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .profile-settings-header {
+    height: 6.5rem;
+    padding: 0 1rem;
+    gap: 8px;
+  }
+
+  .profile-settings-header .back-arrow {
+    font-size: 2rem;
+  }
+
+  .profile-settings-header .logo {
+    height: 5.5rem;
+  }
+
+  .profile-settings-header h2 {
+    font-size: 2rem;
+  }
+
+  .profile-settings-title h3 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .profile-settings-title p {
+    font-size: 15px;
+    margin-bottom: 2rem;
+  }
+
+  .profile-settings-tabs {
+    height: auto;
+    padding: 6px;
+    border-radius: 16px;
+  }
+
+  .profile-settings-tabs ul {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .profile-settings-tabs ul li a {
+    padding: 10px 12px;
+    font-size: 14px;
+    justify-content: flex-start;
+  }
+
+  .tab {
+    width: 100%;
+  }
+
+  .tab.phos-icon {
+    margin-right: 12px;
+    font-size: 1.5rem;
+  }
+
+  .notification-settings-card,
+  .privacy-settings-card {
+    padding: 16px;
+  }
+
+  .notification-settings-card h4,
+  .privacy-settings-content h4 {
+    font-size: 1.6rem;
+  }
+
+  .notification-settings-card p,
+  .privacy-settings-content p {
+    font-size: 14px;
+    margin-bottom: 1.5rem;
+  }
+
+  .notification-settings-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 10px 0;
+  }
+
+  .notification-settings-item label {
+    width: 100%;
+  }
+
+  input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+  }
+
+  .save-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+  }
+
+  #data {
+    padding-bottom: 1.5rem;
+  }
+
+
+  .buttons {
+    flex-direction: row !important;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 12px;
+    margin-top: 16px;
+  }
+
+  .btn {
+    flex: 1;
+    width: auto !important;
+    padding: 12px 16px;
+    font-size: 14px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 55%;
+  }
+
+  .profile-settings-header {
+    height: 6rem;
+    padding: 0 0.8rem;
+  }
+
+  .profile-settings-header .back-arrow {
+    font-size: 1.8rem;
+  }
+
+  .profile-settings-header .logo {
+    height: 5rem;
+  }
+
+  .profile-settings-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .profile-settings-title h3 {
+    font-size: 2rem;
+  }
+
+  .profile-settings-tabs ul li a {
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+
+  .notification-settings-card h4,
+  .privacy-settings-content h4 {
+    font-size: 1.5rem;
+  }
+
+  .notification-settings-card p,
+  .privacy-settings-content p {
+    font-size: 13.5px;
+  }
+
+  .save-btn,
+  .btn {
+    font-size: 14px;
+  }
+}

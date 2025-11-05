@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 :root {
@@ -10,7 +10,7 @@
   --primary-color2: #212121;
   --primary-color3: #ffe4b5;
   --primary-color4: #717182;
-  --primary-color5: #D95108;
+  --primary-color5: #d95108;
 }
 
 /* ===== LAYOUT ===== */

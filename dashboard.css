@@ -53,22 +53,22 @@
     top: 0;
     width: 100%;
     height: 100%;
-    /* The requested dark, semi-transparent background */
+    
     background-color: rgba(0, 0, 0, 0.4); /* Black with 40% opacity (gray-small-transparent effect) */
-    backdrop-filter: blur(2px); /* Optional: Adds a slight blur to content behind it */
-    -webkit-backdrop-filter: blur(2px); /* For compatibility */
+    backdrop-filter: blur(2px); 
+    -webkit-backdrop-filter: blur(2px); 
      
     align-items: center; /* Center vertically */
     justify-content: center; /* Center horizontally */
 }
 
-/* 🖼️ Styles for the actual confirmation box */
+
 .modal-content {
-    background-color: #fefefe; /* White background for the box */
+    background-color: #fefefe; 
     padding: 30px;
-    border-radius: 8px; /* Rounded corners */
-    width: 90%; /* Responsive width */
-    max-width: 400px; /* Maximum size */
+    border-radius: 8px; 
+    width: 90%; 
+    max-width: 400px; 
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     text-align: right;
 }
@@ -96,7 +96,7 @@
 }
 
 .btn-confirm {
-    background-color: #d9534f; /* Red for the destructive action */
+    background-color: #d9534f; 
     color: white;
 }
 
@@ -326,4 +326,224 @@
   position: absolute;
   left: 0;
   font-weight: bold;
+}
+/* ========================================
+   RESPONSIVE DASHBOARD STYLES
+   ======================================== */
+
+/* Tablet & Mobile Adjustments */
+@media (max-width: 992px) {
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .meal-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .meal-card img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .btn-add {
+    margin-left: 0;
+    margin-top: 8px;
+  }
+
+  .meal-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn-suggestions {
+    width: 100%;
+  }
+}
+
+/* Mobile Only */
+@media (max-width: 600px) {
+  .header {
+    padding: 12px 16px;
+    flex-wrap: wrap;
+  }
+
+  .header .logo {
+    font-size: 18px;
+  }
+
+  .header .logo img {
+    width: 28px;
+  }
+
+  .user-actions {
+    margin-top: 8px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .user-actions button {
+    flex: 1;
+    margin: 0 4px;
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+
+  .container {
+    padding: 16px;
+  }
+
+  .greeting {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .greeting h1 {
+    font-size: 18px;
+  }
+
+  .avatar {
+    width: 60px;
+    height: 60px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .stat-card {
+    padding: 14px;
+  }
+
+  .stat-card h3 {
+    font-size: 16px;
+  }
+
+  .stat-card p {
+    font-size: 12px;
+  }
+
+  .stat-card .icon img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .section {
+    padding: 16px;
+  }
+
+  .section h2 {
+    font-size: 16px;
+  }
+
+  .subtitle {
+    font-size: 12px;
+  }
+
+  .meal-card {
+    padding: 10px 0;
+  }
+
+  .meal-card img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .meal-info h4 {
+    font-size: 14px;
+  }
+
+  .meal-info p {
+    font-size: 12px;
+  }
+
+  .btn-add {
+    font-size: 11px;
+    padding: 4px 10px;
+  }
+
+  .tips-list li {
+    font-size: 13px;
+    padding-left: 18px;
+  }
+
+  .tips-list li::before {
+    font-size: 16px;
+    left: 2px;
+  }
+
+  .action-item {
+    font-size: 14px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .action-item img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .view-all {
+    font-size: 13px;
+  }
+
+  /* Modal on Mobile */
+  .modal-content {
+    width: 92%;
+    padding: 20px;
+  }
+
+  .modal-content h3 {
+    font-size: 18px;
+  }
+
+  .modal-content p {
+    font-size: 14px;
+  }
+
+  .modal-buttons button {
+    padding: 10px 12px;
+    font-size: 14px;
+    width: 100%;
+    margin: 8px 0;
+  }
+}
+
+/* Extra Small Phones */
+@media (max-width: 380px) {
+  .header .logo span {
+    display: none;
+  }
+
+  .header .logo img {
+    width: 32px;
+  }
+
+  .user-actions button {
+    font-size: 12px;
+    padding: 6px 8px;
+  }
+
+  .greeting h1 {
+    font-size: 16px;
+  }
+
+  .stat-card h3 {
+    font-size: 15"
+  }
+
+  .meal-info h4 {
+    font-size: 13px;
+  }
+
+  .action-item {
+    font-size: 13px;
+  }
 }
