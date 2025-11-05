@@ -588,3 +588,57 @@ input:focus {
     padding: 20px;
   }
 }
+/* ========================================
+   MOBILE NAV ICON (HAMBURGER)
+   ======================================== */
+.mobile-nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 1000;
+}
+
+.mobile-nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--dark-gray);
+  margin: 5px 0;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+/* Show hamburger only on mobile */
+@media (max-width: 600px) {
+  .mobile-nav-toggle {
+    display: block;
+  }
+
+  /* Show nav when active */
+  .nav.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 1rem 20px;
+    gap: 1rem;
+    z-index: 999;
+  }
+
+  /* Hamburger to X animation */
+  .mobile-nav-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+  }
+  .mobile-nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .mobile-nav-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+  }
+}

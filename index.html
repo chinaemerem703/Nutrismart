@@ -10,13 +10,20 @@
 <body>
 
   <!-- Header -->
-
   <header class="header">
     <div class="container">
       <div class="logo">
         <img src="images/landing-page-logo-image.png" alt="NutriSmart Logo" class="logo-img">
         <span>Nutri<span class="span-b">Smart</span></span>
       </div>
+
+      <!-- MOBILE NAV TOGGLE (HAMBURGER) -->
+      <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
       <nav class="nav">
         <a href="#" class="nav-link">Home</a>
         <a href="#" class="nav-link">About Us</a>
@@ -27,7 +34,6 @@
   </header>
 
   <!-- Hero Section -->
-
   <section class="hero">
     <div class="container hero-grid">
       <div class="hero-content">
@@ -44,8 +50,7 @@
     </div>
   </section>
 
- <!-- Features -->
-
+  <!-- Features -->
   <section class="features">
     <div class="container features-grid">
       <div class="feature-card">
@@ -65,8 +70,8 @@
       </div>
     </div>
   </section>
-  <!-- About Section -->
 
+  <!-- About Section -->
   <section class="about">
     <div class="container about-content">
       <h2>We offer a smarter way to eat and live healthy</h2>
@@ -76,7 +81,6 @@
   </section>
   
   <!-- Footer -->
-
   <footer class="footer">
     <div class="container">
       <p>© 2025 NutriSmart. All rights reserved.</p>
@@ -84,5 +88,24 @@
   </footer>
 
   <script src="script.js"></script>
+
+  <!-- MOBILE NAV JS -->
+  <script>
+    const toggle = document.querySelector('.mobile-nav-toggle');
+    const nav = document.querySelector('.nav');
+
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+      toggle.classList.toggle('active');
+    });
+
+    // Close menu when clicking a link
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('active');
+        toggle.classList.remove('active');
+      });
+    });
+  </script>
 </body>
 </html>
