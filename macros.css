@@ -206,7 +206,7 @@ p.neutral {
 
   .week-select {
     position: static;
-    width: 100%;
+  
     margin: 16px 0;
     padding: 10px 12px;
   }
@@ -296,7 +296,7 @@ p.neutral {
   }
 
   .cards {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 
   .metrics {
@@ -347,6 +347,7 @@ p.neutral {
   .week-select {
     font-size: 14px;
     padding: 8px 10px;
+    
   }
 
   .card {
