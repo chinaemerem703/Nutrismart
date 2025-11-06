@@ -422,7 +422,7 @@ body {
   color: var(--dark-gray);
 }
 
-/* PERFECT MOBILE RESPONSIVE — NO OVERLAP, NO STRETCH */
+
 @media (max-width: 992px) {
   .navbar,
   .meal-header,
@@ -493,6 +493,7 @@ body {
   }
   .recipe-title {
     font-size: 17px;
+    margin-top: 10px;
   }
   .cal-value {
     font-size: 22px;
@@ -543,6 +544,7 @@ body {
   }
   .recipe-title {
     font-size: 16px;
+    margin-top: 10px;
   }
   .cal-value {
     font-size: 20px;
