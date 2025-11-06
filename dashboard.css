@@ -339,18 +339,18 @@
 
   .meal-card {
     flex-direction: column;
-    text-align: center;
+    text-align: left;
     gap: 10px;
   }
 
   .meal-card img {
     width: 80px;
     height: 80px;
+    object-fit: cover;
   }
 
   .btn-add {
-    margin-left: 0;
-    margin-top: 8px;
+    text-align: right;
   }
 
   .meal-actions {
@@ -380,7 +380,7 @@
 
   .user-actions {
     margin-top: 8px;
-    width: 100%;
+    /* width: 100%; */
     display: flex;
     justify-content: space-between;
   }
@@ -398,7 +398,7 @@
 
   .greeting {
     flex-direction: column;
-    text-align: center;
+    text-align: left;
     gap: 10px;
   }
 
@@ -412,7 +412,7 @@
   }
 
   .stats-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 10px;
   }
 
@@ -431,10 +431,13 @@
   .stat-card .icon img {
     width: 20px;
     height: 20px;
+    
   }
 
   .section {
     padding: 16px;
+    
+    
   }
 
   .section h2 {
@@ -447,24 +450,30 @@
 
   .meal-card {
     padding: 10px 0;
+    
+    
   }
 
   .meal-card img {
-    width: 70px;
-    height: 70px;
+    width: 150px;
+    height: 150px;
+    
   }
 
   .meal-info h4 {
     font-size: 14px;
+  
   }
 
   .meal-info p {
-    font-size: 12px;
+    font-size: 6px;
+    
   }
 
   .btn-add {
     font-size: 11px;
     padding: 4px 10px;
+    text-align: left;
   }
 
   .tips-list li {
@@ -511,7 +520,7 @@
   .modal-buttons button {
     padding: 10px 12px;
     font-size: 14px;
-    width: 100%;
+    /* width: 100%; */
     margin: 8px 0;
   }
 }

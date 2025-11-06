@@ -31,36 +31,6 @@ html{
     font-size: 62.5%; /* 1rem = 10px */
 }
 
-@media (max-width: 1200px) {
-  html {
-    font-size: 58%;
-  }
-}
-
-@media (max-width: 900px) {
-  html {
-    font-size: 55%;
-  }
-
-.food-details__labels{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-.food-details{
-    width: 80%;
-    margin: 0 auto;
-}
-}
-
-@media (max-width: 600px) {
-  html {
-    font-size: 43.7%;
-  }
-}
-
-
 body{
     background-color: var(--color-bg);
     color: var(--color-text);
@@ -70,12 +40,14 @@ body{
 .food-details__header{
     display: flex;
     align-items: center;
+    justify-self: center;
     background-color: var(--color-bg-white);
-    padding: 1.5rem 2rem;
+    padding: var(--padding-md) 2rem;
     gap: 1rem; 
     width: 100%;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
+
 
 .food-details__back-btn{
     width: 3.6rem;
@@ -84,19 +56,16 @@ body{
     align-items: center; 
     justify-content: center; 
     border: none;
-    background-color: transparent;
+    background: none;
     color: var(--color-text);
     cursor: pointer;
     font-size: 2.4rem;
+    text-decoration: none;
 }
 
 .food-details__back-btn>i{
     width: 2.4rem;
     height: 2.4rem;
-
-}
-.food-details__back-btn>i a {
-    text-decoration: none;
 }
 
 .food-details__branding{
@@ -112,15 +81,16 @@ body{
 
 .food-details__title-link{
     font-weight: 700;
-    text-decoration: none;
-    font-size: 2.4rem;
-    color: var(--color-text);
     font-family: poppins;
+    font-size: 2.6rem;
+    text-decoration: none;
+    color: var(--color-text);
 }
 
 .food__details{
     max-width: 120rem;
     padding: 2rem;
+    margin: 0 auto;
 }
 
 /* Card */
@@ -417,4 +387,34 @@ body{
 .food-details__btn--secondary:hover{
     background-color: var(--color-secondary);
     color: var(--color-text);
+}
+
+/* Media Query */
+@media (max-width: 1200px) {
+  html {
+    font-size: 58%;
+  }
+}
+
+@media (max-width: 900px) {
+  html {
+    font-size: 55%;
+  }
+
+.food-details__labels{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.food-details{
+    width: 80%;
+    margin: 0 auto;
+}
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 43.7%;
+  }
 }
