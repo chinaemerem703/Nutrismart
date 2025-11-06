@@ -210,6 +210,10 @@ body {
 .warning {
   background-color: var(--warning);
 }
+.allergen a {
+  text-decoration: none;
+  color: #fff;
+}
 .suitable {
   background-color: var(--green);
 }

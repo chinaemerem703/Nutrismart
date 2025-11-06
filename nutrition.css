@@ -224,9 +224,9 @@
 
 /* TAG COLORS */
 .tag {
-  border: 1px solid var(--border-gray);
+  border: 1px solid var(--green);
   border-radius: 10px;
-  color: #212121;
+  color: var(--green);
 }
 
 

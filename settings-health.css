@@ -286,7 +286,7 @@ body {
 @media (max-width: 480px) {
   .header {
     flex-direction: row;
-    gap: 12px;
+    gap: 8px;
     text-align: left;
   }
   .more-options {
@@ -298,6 +298,6 @@ body {
     font-size: 12px;
   }
   .tab i {
-    font-size: 14px;
+    font-size: 10px;
   }
 }
