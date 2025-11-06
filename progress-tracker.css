@@ -32,14 +32,14 @@ body {
   font-size: 18px;
   color: #212121;
 }
-    .week-select {
-    position: absolute;
-    right: 50px;
-    top: 55px; 
-    border: none;
-    padding: 8px 12px;
-    border-radius: 4px;
-    }
+.week-select {
+  position: absolute;
+  right: 50px;
+  top: 55px;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+}
 
 /* ==== Main ==== */
 .main h2 {
@@ -150,4 +150,97 @@ body {
 .banner-text {
   font-size: 15px;
   color: #2e7d32;
+}
+/* PERFECT MOBILE RESPONSIVE — CLEAN & COMPACT */
+@media (max-width: 992px) {
+  body {
+    padding: 16px;
+  }
+  .header {
+    padding: 14px 16px;
+  }
+  .week-select {
+    position: static;
+    width: 100%;
+    margin: 16px 0;
+  }
+  .cards {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .chart-box {
+    height: 340px;
+    padding: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main h2 {
+    font-size: 1.35rem;
+  }
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+  .tabs {
+    padding: 6px;
+    gap: 6px;
+  }
+  .tab {
+    padding: 8px 12px;
+    font-size: 12.5px;
+  }
+  .chart-box {
+    height: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 12px;
+  }
+  .header {
+    padding: 12px;
+    gap: 6px;
+  }
+  .logo {
+    font-size: 16px;
+  }
+  .logo img {
+    width: 32px;
+    height: 40px;
+  }
+  .main h2 {
+    font-size: 1.25rem;
+  }
+  .main p {
+    font-size: 0.85rem;
+  }
+  .week-select {
+    position: static;
+    width: 100%;
+     color: #6a0dad;
+    margin: 12px 0 0;
+    order: 3;
+  }
+  .card {
+    padding: 14px;
+  }
+  .value {
+    font-size: 1.3rem;
+  }
+  .tab {
+    font-size: 12px;
+    padding: 7px 10px;
+  }
+  .chart-box {
+    height: 300px;
+    padding: 14px;
+  }
+  .banner {
+    padding: 10px 14px;
+    gap: 10px;
+  }
+  .banner-text {
+    font-size: 14px;
+  }
 }

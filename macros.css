@@ -42,12 +42,12 @@
   max-width: 982px;
 }
 .week-select {
-  position: absolute;
-  right: 50px;
-  top: 55px; 
+  margin-left: auto;
   border: none;
- padding: 8px 12px;
- border-radius: 4px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  background: #f0eafc;
+  font-size: 14px;
 }
 
 
@@ -345,11 +345,11 @@ p.neutral {
   }
 
   .week-select {
-    font-size: 14px;
-    padding: 8px 10px;
-    
+    position: static;
+    width: 100%;
+    margin: 12px 0 0;
+    order: 3;
   }
-
   .card {
     padding: 12px;
   }

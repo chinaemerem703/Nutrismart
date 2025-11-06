@@ -34,7 +34,6 @@ body {
   padding: 8px 12px;
   border-radius: 6px;
   background: #f0eafc;
-  color: #6a0dad;
   font-size: 14px;
 }
 
@@ -170,6 +169,7 @@ body {
   .week-select {
     position: static;
     width: 100%;
+     color: #6a0dad;
     margin: 12px 0 0;
     order: 3;
   }
