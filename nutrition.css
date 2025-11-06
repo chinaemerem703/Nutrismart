@@ -274,7 +274,7 @@
   }
   .tip-card {
     flex-direction: column;
-    text-align: center;
+    text-align: left;
   }
   .tip-icon {
     margin: 0 auto 12px;

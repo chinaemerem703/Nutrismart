@@ -3,7 +3,8 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   background: #fafafa;
   color: #333;
-  padding: 20px;
+  padding: 16px;
+  min-height: 100vh;
 }
 
 /* Header */
@@ -11,10 +12,11 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 16px 20px;
+  padding: 14px 16px;
   background: white;
   border-bottom: 1px solid #eee;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
 }
 .back-arrow img, .logo img { display: block; }
 .logo {
@@ -30,46 +32,67 @@ body {
   margin-left: auto;
   border: none;
   padding: 8px 12px;
-  border-radius: 4px;
+  border-radius: 6px;
   background: #f0eafc;
   color: #6a0dad;
+  font-size: 14px;
 }
 
 /* Main */
-.main h2 { font-size: 1.5rem; margin-bottom: 5px; }
-.main p { color: #666; font-size: 0.9rem; margin-bottom: 20px; }
+.main h2 { 
+  font-size: 1.4rem; 
+  margin-bottom: 6px; 
+}
+.main p { 
+  color: #666; 
+  font-size: 0.9rem; 
+  margin-bottom: 20px; 
+}
 
 /* Cards */
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
   margin-bottom: 20px;
 }
 .card {
   background: white;
   border-radius: 12px;
-  padding: 15px;
+  padding: 14px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
-.card h3 { font-size: 0.9rem; color: #555; }
-.value { font-size: 1.4rem; font-weight: 600; margin: 5px 0; }
-.change { font-size: 0.8rem; }
-.positive { color: #28a745; }
-.neutral { color: #28a745; }
+.card h3 { 
+  font-size: 0.85rem; 
+  color: #555; 
+}
+.value { 
+  font-size: 1.35rem; 
+  font-weight: 600; 
+  margin: 4px 0; 
+}
+.change { 
+  font-size: 0.75rem; 
+}
+.positive, .neutral { 
+  color: #28a745; 
+}
 
 /* Tabs */
 .tabs {
   display: flex;
-  gap: 8px;
-  margin: 24px 0;
-  padding: 8px;
+  gap: 6px;
+  margin: 20px 0;
+  padding: 6px;
   background: #f5f5f5;
   border-radius: 18px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 .tab {
   flex: 1;
-  padding: 10px 16px;
+  min-width: 90px;
+  padding: 10px 12px;
   border-radius: 20px;
   background: transparent;
   color: #666;
@@ -77,6 +100,7 @@ body {
   font-weight: 500;
   border: none;
   cursor: pointer;
+  white-space: nowrap;
 }
 .tab.active {
   background: white;
@@ -88,53 +112,128 @@ body {
 /* Chart Box */
 .chart-box {
   position: relative;
-  height: 400px;
+  height: 380px;
   background: white;
-  padding: 20px;
+  padding: 16px;
   border-radius: 12px;
   margin: 20px 0;
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
-
-#macroChart, #weightChart {
-  position: absolute;
-  top: 70px;
-  left: 20px;
-  right: 20px;
-  bottom: 20px;
+.chart-title { 
+  font-size: 17px; 
+  font-weight: 600; 
+  margin-bottom: 6px; 
 }
-/* .chart-box {
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-  margin-bottom: 24px;
-  position: relative;
-  height: 400px; 
-} */
-.chart-title { font-size: 18px; font-weight: 600; margin-bottom: 8px; }
-.chart-subtitle { font-size: 14px; color: #666; margin-bottom: 16px; }
+.chart-subtitle { 
+  font-size: 13.5px; 
+  color: #666; 
+  margin-bottom: 12px; 
+}
 
 /* Canvas */
-#weightChart {
+#macroChart, #weightChart {
   position: absolute;
-  top: 70px;
-  left: 20px;
-  right: 20px;
-  bottom: 20px;
-  width: calc(100% - 40px) !important;
-  height: calc(100% - 90px) !important;
+  top: 64px;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
 }
 
 /* Banner */
 .banner {
   background: #e8f5e9;
   border-left: 4px solid #4caf50;
-  padding: 12px 16px;
+  padding: 12px 14px;
   border-radius: 8px;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
+  font-size: 14px;
 }
-.banner-icon { font-size: 20px; }
-.banner-text { font-size: 15px; color: #2e7d32; }
+.banner-icon { font-size: 18px; }
+.banner-text { font-size: 14px; color: #2e7d32; }
+
+/* ========================================
+   RESPONSIVE BREAKPOINTS
+   ======================================== */
+@media (max-width: 768px) {
+  .header {
+    padding: 12px 14px;
+  }
+  .logo {
+    font-size: 17px;
+  }
+  .logo img {
+    width: 36px;
+    height: 44px;
+  }
+  .week-select {
+    position: static;
+    width: 100%;
+    margin: 12px 0 0;
+    order: 3;
+  }
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+  .chart-box {
+    height: 340px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 12px;
+  }
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 12px;
+  }
+  .logo {
+    font-size: 16px;
+  }
+  .logo img {
+    width: 32px;
+    height: 40px;
+  }
+  .main h2 { 
+    font-size: 1.25rem; 
+  }
+  .main p { 
+    font-size: 0.85rem; 
+  }
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .card {
+    padding: 12px;
+  }
+  .value {
+    font-size: 1.25rem;
+  }
+  .tab {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+  .chart-box {
+    height: 300px;
+    padding: 12px;
+  }
+  #macroChart, #weightChart {
+    top: 56px;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+  }
+  .banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 14px;
+  }
+  .banner-icon {
+    font-size: 24px;
+  }
+}

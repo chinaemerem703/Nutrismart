@@ -3,7 +3,7 @@
       calories: 'progress-tracker.html',
       macros: 'macros.html',
       weight: 'progress-tracker-weight.html',
-      Acheivement : 'capstone.html'
+      Acheivement : '#'
     };
     if (pages[tab]) {
       window.location.href = pages[tab];

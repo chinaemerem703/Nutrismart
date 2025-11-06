@@ -185,3 +185,222 @@ p.neutral {
   right: 20px;
   bottom: 20px;
 }
+
+/* ========================================
+   RESPONSIVE: Progress Tracker Page
+   ======================================== */
+
+@media (max-width: 992px) {
+  body {
+    padding: 16px;
+    margin: 16px;
+  }
+
+  .main h2 {
+    font-size: 1.4rem;
+  }
+
+  .main p {
+    font-size: 0.85rem;
+  }
+
+  .week-select {
+    position: static;
+    width: 100%;
+    margin: 16px 0;
+    padding: 10px 12px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .card h3 {
+    font-size: 0.85rem;
+  }
+
+  .value {
+    font-size: 1.3rem;
+  }
+
+  p.change {
+    font-size: 0.75rem;
+  }
+
+  .tabs {
+    gap: 6px;
+    padding: 6px;
+  }
+
+  .tab {
+    padding: 7px 12px;
+    font-size: 12.5px;
+  }
+
+  .metrics {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .metric-value {
+    font-size: 22px;
+  }
+
+  .metric-label {
+    font-size: 13px;
+  }
+
+  .chart-container,
+  .chart-box {
+    height: 350px;
+    padding: 16px;
+  }
+
+  #macroChart,
+  #weightChart {
+    top: 60px;
+    bottom: 16px;
+  }
+
+  .range-label {
+    font-size: 13px;
+    padding: 4px 8px;
+    bottom: 8px;
+    right: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 14px 16px;
+    gap: 6px;
+  }
+
+  .back-arrow img {
+    width: 18px;
+    height: 18px;
+  }
+
+  .logo {
+    font-size: 17px;
+  }
+
+  .logo img {
+    width: 36px;
+    height: 44px;
+  }
+
+  .main h2 {
+    font-size: 1.3rem;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .chart-container,
+  .chart-box {
+    height: 320px;
+  }
+
+  .tabs {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 12px;
+    margin: 12px;
+  }
+
+  .header {
+    padding: 12px 12px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .logo {
+    font-size: 16px;
+  }
+
+  .logo img {
+    width: 32px;
+    height: 40px;
+  }
+
+  .main h2 {
+    font-size: 1.2rem;
+    margin-bottom: 4px;
+  }
+
+  .main p {
+    font-size: 0.8rem;
+  }
+
+  .week-select {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+
+  .card {
+    padding: 12px;
+  }
+
+  .card h3 {
+    font-size: 0.8rem;
+  }
+
+  .value {
+    font-size: 1.2rem;
+  }
+
+  p.change {
+    font-size: 0.7rem;
+  }
+
+  .tab {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .metric-card {
+    padding: 16px;
+  }
+
+  .metric-value {
+    font-size: 20px;
+  }
+
+  .metric-label {
+    font-size: 12.5px;
+  }
+
+  .chart-container,
+  .chart-box {
+    height: 300px;
+    padding: 12px;
+    margin: 16px 0;
+  }
+
+  #macroChart,
+  #weightChart {
+    top: 50px;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+  }
+
+  .range-label {
+    font-size: 12px;
+    padding: 3px 6px;
+    bottom: 6px;
+    right: 6px;
+  }
+}
