@@ -226,14 +226,18 @@ body{
     margin-bottom: 1rem;
 }
 
-.food-details__micronutrients {
-  display: flex;
-  justify-content: space-between; 
-  flex-wrap: wrap; 
-  gap: 2rem; 
-  font-size: 1.3rem;
-  color: var(--color-fade);
-  margin:2rem;
+.food-details__nutrients{
+    background-color: #C8E6C94D;
+    color: var(--color-fade);
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: left;
+    padding: 1rem;
+    margin: 2rem;
+    line-height: 1.5;
+    border-radius: var(--border-radius);
 }
 
 .food-details__nutrient-value{
@@ -292,12 +296,12 @@ body{
 
 .food-details__micronutrients{
     display: flex;
-    justify-content: flex-start;
-    gap: 40rem;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
     font-size: 1.3rem;
     color: var(--color-fade);
     margin: 2rem;
-
 }
 
 .food-details__micronutrient{
