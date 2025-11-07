@@ -574,6 +574,7 @@ input:focus {
   }
   .hero-buttons {
     flex-direction: column;
+    text-align: center;
   }
   .button-row {
     flex-direction: column;
@@ -585,12 +586,7 @@ input:focus {
   .page {
     padding: 3px;
   }
-  .btn-primary a {
-    text-align: center;
-  }
-  .btn-secondary a {
-    text-align: center;
-  }
+  
 }
 /* ========================================
    MOBILE NAV ICON (HAMBURGER)
