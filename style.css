@@ -1,5 +1,3 @@
-
-
 * {
   margin: 0;
   padding: 0;
@@ -7,15 +5,15 @@
 }
 
 :root {
-  --orange:       #d95108;   /* Primary accent */
+  --orange: #d95108; /* Primary accent */
   --light-orange: #c43e00;
-  --black:        #000000;   /* Headings, strong text */
-  --green:        #4caf50;   /* Success, healthy */
-  --dark-gray:    #212121;   /* Body text */
-  --light-green:  #c8e6ca;   /* Backgrounds, highlights */
-  --white:        #fff;      /* Cards, inputs */
-  --gray:         #717182;   /* Subtle text */
-  --light-gray:   #ECECF0;   /* Tabs, borders */
+  --black: #000000; /* Headings, strong text */
+  --green: #4caf50; /* Success, healthy */
+  --dark-gray: #212121; /* Body text */
+  --light-green: #c8e6ca; /* Backgrounds, highlights */
+  --white: #fff; /* Cards, inputs */
+  --gray: #717182; /* Subtle text */
+  --light-gray: #ececf0; /* Tabs, borders */
 }
 
 body {
@@ -586,12 +584,13 @@ input:focus {
   }
   .page {
     padding: 3px;
-    
   }
-  .btn-primary,.btn-secondary {
+  .btn-primary a {
     text-align: center;
   }
-  
+  .btn-secondary a {
+    text-align: center;
+  }
 }
 /* ========================================
    MOBILE NAV ICON (HAMBURGER)
