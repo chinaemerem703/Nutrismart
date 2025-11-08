@@ -1,0 +1,157 @@
+:root {
+  --orange: #FF6B35;
+  --light-orange: #FFF0E5;
+  --green: #4CAF50;
+  --gray: #666;
+  --light-gray: #f5f5f5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #FAFAFA;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.container {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 420px;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.back-btn {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--gray);
+  cursor: pointer;
+}
+
+.logo {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 1.5rem;
+}
+
+.envelope {
+  width: 80px;
+  height: 80px;
+  background: var(--light-orange);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+
+.envelope svg {
+  width: 40px;
+  height: 40px;
+  fill: var(--orange);
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: .5rem;
+}
+
+.email {
+  font-weight: 600;
+  color: var(--orange);
+  margin: 1rem 0;
+}
+
+button {
+  background: var(--orange);
+  color: white;
+  border: none;
+  padding: .9rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  width: 100%;
+  cursor: pointer;
+  margin: 1rem 0;
+  transition: .2s;
+}
+
+button:hover {
+  background: #e55a2b;
+}
+
+.resend {
+  color: var(--orange);
+  font-size: .9rem;
+  margin: .5rem 0;
+  cursor: pointer;
+}
+
+.resend.disabled {
+  color: var(--gray);
+  cursor: not-allowed;
+}
+
+.tips {
+  background: #E8F5E9;
+  border-radius: 12px;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  text-align: left;
+  font-size: .9rem;
+  color: var(--gray);
+}
+
+.tips ul {
+  margin-top: .5rem;
+  padding-left: 1.2rem;
+}
+
+.tips li {
+  margin: .4rem 0;
+}
+
+.tips svg {
+  width: 16px;
+  height: 16px;
+  fill: var(--green);
+  vertical-align: middle;
+  margin-right: .3rem;
+}
+
+.change-email {
+  color: var(--orange);
+  font-size: .9rem;
+  margin-top: 1.5rem;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+#message {
+  margin-top: .5rem;
+  font-size: .9rem;
+  min-height: 1.2rem;
+}
+
+.countdown {
+  font-weight: 600;
+  color: var(--orange);
+}

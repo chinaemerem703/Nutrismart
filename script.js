@@ -1,161 +1,105 @@
-// login page
+/* ==================== TABS ==================== */
 function show(id) {
-  // hide both
   document.getElementById("login").style.display = "none";
   document.getElementById("signup").style.display = "none";
-
-  // show the chosen one
   document.getElementById(id).style.display = "block";
 
-  // update tab colors
-  var tabs = document.getElementsByClassName("tab");
-  for (var i = 0; i < tabs.length; i++) {
-    tabs[i].className = tabs[i].className.replace(" active", "");
+  const tabs = document.getElementsByClassName("tab");
+  for (let tab of tabs) {
+    tab.className = tab.className.replace(" active", "");
   }
   event.target.className += " active";
 }
-function goToProfile() {
-  var name = document.getElementById("signupName").value.trim();
-  var email = document.getElementById("signupEmail").value.trim();
 
-  if (!name || !email) {
-    alert("Please fill your name and email!");
-    return;
-  }
-
-  var user = { name: name, email: email };
-  localStorage.setItem("user", JSON.stringify(user));
-
-  window.location.href = "healthprofile.html";
-}
-// health profile
-
-function goToStep2() {
-  const age = document.getElementById("age")?.value.trim();
-  const gender = document.getElementById("gender")?.value;
-  const weight = document.getElementById("weight")?.value.trim();
-  const height = document.getElementById("height")?.value.trim();
-  const activity = document.getElementById("activity")?.value;
-
-  if (
-    !age ||
-    !gender ||
-    gender === "" ||
-    !weight ||
-    !height ||
-    !activity ||
-    activity === ""
-  ) {
-    alert("Please fill all required fields!");
-    return;
-  }
-
-  const data = { age, gender, weight, height, activity };
-  localStorage.setItem("step1Data", JSON.stringify(data));
-
-  window.location.href = "healthprofile2.html";
-}
-
-function goToStep3() {
-  const checkboxes = document.querySelectorAll(
-    'input[type="checkbox"]:checked'
-  );
-  const conditions = Array.from(checkboxes).map((cb) => cb.value);
-  localStorage.setItem("step2Data", JSON.stringify(conditions));
-
-  window.location.href = "healthprofile3.html";
-}
-
-const registerForm = document.getElementById("signup");
-const registerEmail = document.querySelector(".register-email-input");
+/* ==================== DOM ==================== */
+const signupForm = document.getElementById("signup");
+const loginForm = document.getElementById("login");
+const registerName = document.getElementById("signupName");
+const registerEmail = document.getElementById("signupEmail");
 const registerPassword = document.querySelector(".register-password-input");
-const registerName = document.querySelector(".register-name-input");
+const loginEmail = document.querySelector(".login-email-input");
+const loginPassword = document.querySelector(".login-password-input");
 
-// OTP Modal Elements
-const otpModal = document.getElementById("otp-modal");
-const otpInput = document.getElementById("otp-input");
-const verifyOtpBtn = document.getElementById("verify-otp-btn");
-const closeOtpModal = document.getElementById("close-otp-modal");
-
-let currentRegisterEmail = "";
-
-// Show OTP modal
-function showOtpModal(email) {
-  currentRegisterEmail = email;
-  otpModal.style.display = "block";
-  otpInput.focus();
-}
-
-// Close OTP modal
-closeOtpModal.onclick = () => (otpModal.style.display = "none");
-
-registerForm.addEventListener("submit", async function (event) {
-  event.preventDefault();
-
+/* ==================== AFTER SIGNUP → GO TO VERIFY ==================== */
+signupForm.addEventListener("submit", async function (e) {
+  e.preventDefault();
+  const name = registerName.value.trim();
   const email = registerEmail.value.trim();
   const password = registerPassword.value.trim();
-  const name = registerName.value.trim();
 
-  if (!email || !password || !name) {
-    return showMessage("register-message", "All fields are required!", true);
+  if (!name || !email || !password) {
+    alert("Fill all fields");
+    return;
   }
 
-  const data = { email, password, name };
-
   try {
-    const response = await fetch(
-      "https://nutri-smart-akeg.onrender.com/auth/register",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      }
-    );
+    const res = await fetch("https://nutri-smart-akeg.onrender.com/auth/register", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, email, password })
+    });
 
-    const result = await response.json();
-
-    if (response.status === 201) {
-      showMessage("register-message", "OTP sent to your email!", false);
-      showOtpModal(email);
+    if (res.status === 201) {
+      localStorage.setItem("pendingEmail", email);
+      localStorage.setItem("justSignedUp", "true");
+      alert("OTP sent! Check your email.");
+      window.location.href = "verify-email/verify.html";
     } else {
-      showMessage("register-message", result.message || "Registration failed", true);
+      const data = await res.json();
+      alert(data.message || "Signup failed");
     }
-  } catch (error) {
-    console.error(error);
-    showMessage("register-message", "Network error.", true);
+  } catch (err) {
+    alert("Network error");
   }
 });
 
-// VERIFY OTP
-verifyOtpBtn.addEventListener("click", async () => {
-  const code = otpInput.value.trim();
+/* ==================== AFTER LOGIN → CHECK IF VERIFIED ==================== */
+loginForm.addEventListener("submit", async function (e) {
+  e.preventDefault();
+  const email = loginEmail.value.trim();
+  const password = loginPassword.value.trim();
 
-  if (!code || code.length !== 6) {
-    return alert("Enter a valid 6-digit OTP");
+  if (!email || !password) {
+    alert("Fill all fields");
+    return;
   }
 
   try {
-    const response = await fetch(
-      "https://nutri-smart-akeg.onrender.com/auth/verify",
-      {
+    const res = await fetch("https://nutri-smart-akeg.onrender.com/auth/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password })
+    });
+    const data = await res.json();
+
+    if (res.ok) {
+      localStorage.setItem("authToken", data.accessToken);
+      localStorage.setItem("userEmail", email);
+
+      // CHECK IF USER IS VERIFIED
+      const verifyRes = await fetch("https://nutri-smart-akeg.onrender.com/auth/check-verified", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: currentRegisterEmail, code }),
+        body: JSON.stringify({ email })
+      });
+
+      if (verifyRes.ok) {
+        const v = await verifyRes.json();
+        if (v.verified) {
+          window.location.href = "dashboard.html";
+        } else {
+          localStorage.setItem("pendingEmail", email);
+          window.location.href = "verify-email/index.html";
+        }
+      } else {
+        // If no check endpoint, assume needs verify
+        localStorage.setItem("pendingEmail", email);
+        window.location.href = "verify-email/index.html";
       }
-    );
-
-    const result = await response.json();
-
-    if (response.ok) {
-      alert("Account verified! Please log in.");
-      otpModal.style.display = "none";
-      otpInput.value = "";
-      window.location.href = "login.html"; // redirect to login
     } else {
-      alert(result.message || "Invalid or expired OTP");
+      alert(data.message || "Login failed");
     }
-  } catch (error) {
-    console.error(error);
-    alert("Verification failed");
+  } catch (err) {
+    alert("Network error");
   }
 });

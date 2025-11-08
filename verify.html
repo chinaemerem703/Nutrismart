@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NutriSmart – Verify Email</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="verify.css" />
+</head>
+<body>
+
+<div class="container">
+  <!-- <button class="back-btn" id="back-btn">Back</button>
+
+  <img src="images/landing-page-logo-image.png" alt="NutriSmart" class="logo"> -->
+
+  <div class="envelope">
+    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+  </div>
+
+  <h1>Verify Your Email</h1>
+  <p>We've sent a 6-digit verification code to</p>
+  <p class="email" id="user-email">loading...</p>
+
+  <button id="verify-btn">Verify Email</button>
+
+  <p>
+    Didn't receive the code?<br>
+    <span id="resend-link" class="resend">Resend code in <span id="countdown">60</span>s</span>
+  </p>
+
+  <div class="tips">
+    <strong>Tips:</strong>
+    <ul>
+      <li> Check your spam folder if you don't see the email</li>
+      <li> Make sure you entered the correct email address</li>
+      <li>The code expires in 10 minutes</li>
+    </ul>
+  </div>
+
+  <p class="change-email" id="change-email">Use a different email address</p>
+
+  <p id="message"></p>
+</div>
+
+<script src="verify.js"></script>
+</body>
+</html>
