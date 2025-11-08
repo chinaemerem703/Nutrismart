@@ -66,70 +66,96 @@ function goToStep3() {
   window.location.href = "healthprofile3.html";
 }
 
-const loginForm = document.getElementById("login");
-const loginEmail = document.querySelector(".login-email-input");
-const loginPassword = document.querySelector(".login-password-input");
-
-loginForm.addEventListener("submit", async function (event) {
-  event.preventDefault();
-  if (!loginEmail.value.trim() || !loginPassword.value.trim())
-    return alert("Please enter both email and password!");
-
-  const data = {
-    email: loginEmail.value.trim(),
-    password: loginPassword.value.trim(),
-  };
-  try {
-    const response = await fetch(
-      "https://nutri-smart-akeg.onrender.com/auth/login",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      }
-    );
-    const result = await response.json();
-    console.log(result);
-  } catch (error) {
-    console.log(error);
-  }
-});
-
 const registerForm = document.getElementById("signup");
 const registerEmail = document.querySelector(".register-email-input");
 const registerPassword = document.querySelector(".register-password-input");
 const registerName = document.querySelector(".register-name-input");
 
+// OTP Modal Elements
+const otpModal = document.getElementById("otp-modal");
+const otpInput = document.getElementById("otp-input");
+const verifyOtpBtn = document.getElementById("verify-otp-btn");
+const closeOtpModal = document.getElementById("close-otp-modal");
+
+let currentRegisterEmail = "";
+
+// Show OTP modal
+function showOtpModal(email) {
+  currentRegisterEmail = email;
+  otpModal.style.display = "block";
+  otpInput.focus();
+}
+
+// Close OTP modal
+closeOtpModal.onclick = () => (otpModal.style.display = "none");
+
 registerForm.addEventListener("submit", async function (event) {
   event.preventDefault();
-  if (
-    !registerEmail.value.trim() ||
-    !registerPassword.value.trim() ||
-    !registerName.value.trim()
-  )
-    return alert("Please fill in the required field!");
 
-  const data = {
-    email: registerEmail.value.trim(),
-    password: registerPassword.value.trim(),
-    name: registerName.value.trim(),
-  };
+  const email = registerEmail.value.trim();
+  const password = registerPassword.value.trim();
+  const name = registerName.value.trim();
+
+  if (!email || !password || !name) {
+    return showMessage("register-message", "All fields are required!", true);
+  }
+
+  const data = { email, password, name };
+
   try {
     const response = await fetch(
       "https://nutri-smart-akeg.onrender.com/auth/register",
       {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       }
     );
-    const result = response.json();
-    console.log(result);
+
+    const result = await response.json();
+
+    if (response.status === 201) {
+      showMessage("register-message", "OTP sent to your email!", false);
+      showOtpModal(email);
+    } else {
+      showMessage("register-message", result.message || "Registration failed", true);
+    }
   } catch (error) {
-    console.log(error);
+    console.error(error);
+    showMessage("register-message", "Network error.", true);
+  }
+});
+
+// VERIFY OTP
+verifyOtpBtn.addEventListener("click", async () => {
+  const code = otpInput.value.trim();
+
+  if (!code || code.length !== 6) {
+    return alert("Enter a valid 6-digit OTP");
+  }
+
+  try {
+    const response = await fetch(
+      "https://nutri-smart-akeg.onrender.com/auth/verify",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: currentRegisterEmail, code }),
+      }
+    );
+
+    const result = await response.json();
+
+    if (response.ok) {
+      alert("Account verified! Please log in.");
+      otpModal.style.display = "none";
+      otpInput.value = "";
+      window.location.href = "login.html"; // redirect to login
+    } else {
+      alert(result.message || "Invalid or expired OTP");
+    }
+  } catch (error) {
+    console.error(error);
+    alert("Verification failed");
   }
 });
