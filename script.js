@@ -89,12 +89,12 @@ loginForm.addEventListener("submit", async function (e) {
           window.location.href = "dashboard.html";
         } else {
           localStorage.setItem("pendingEmail", email);
-          window.location.href = "verify-email/index.html";
+          window.location.href = "verify-email/verify.html";
         }
       } else {
         // If no check endpoint, assume needs verify
         localStorage.setItem("pendingEmail", email);
-        window.location.href = "verify-email/index.html";
+        window.location.href = "verify-email/verify.html";
       }
     } else {
       alert(data.message || "Login failed");
