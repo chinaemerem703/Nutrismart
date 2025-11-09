@@ -1,4 +1,7 @@
-
+.logo {
+  display: flex;
+  align-items: center;
+}
 .forgot-container {
   display: flex;
   justify-content: center;

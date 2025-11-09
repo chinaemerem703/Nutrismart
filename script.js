@@ -47,55 +47,34 @@ signupForm.addEventListener("submit", async function (e) {
     return showMessage("signup", "All fields required", true);
   }
 
+  const payload = { name, email, password };
+
   try {
-    // USE /auth/resend-otp FOR SIGNUP TOO
-    const res = await fetch(`${API_BASE}/auth/resend-otp`, {
+    const res = await fetch(`${API_BASE}/auth/register`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email })
+      body: JSON.stringify(payload)
     });
 
     const data = await res.json();
+    console.log(data);
 
+    // UNCOMMENT THIS (CHANGE #1)
     if (res.ok) {
       localStorage.setItem("pendingEmail", email);
       showMessage("signup", "OTP sent! Redirecting...", false);
-      setTimeout(() => location.href = "verify-email/index.html", 1000);
+      setTimeout(() => location.href = "verify.html", 1000);
     } else {
-      showMessage("signup", data.message || "Failed to send OTP", true);
+      // CHANGE #2: Show the actual errors array
+      showMessage("signup", data.message || data.errors?.join(", ") || "Signup failed", true);
     }
   } catch (err) {
-    showMessage("signup", "Network error. Is backend live?", true);
+    showMessage("signup", "Network error", true);
+    console.log(err);
   }
 });
 
-/* ==================== LOGIN ==================== */
-loginForm.addEventListener("submit", async function (e) {
-  e.preventDefault();
-  const email = loginEmail.value.trim();
-  const password = loginPassword.value.trim();
-
-  if (!email || !password) {
-    return showMessage("login", "Fill all fields", true);
-  }
-
-  try {
-    const res = await fetch(`${API_BASE}/auth/login`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, password })
-    });
-
-    const data = await res.json();
-
-    if (res.ok) {
-      localStorage.setItem("authToken", data.accessToken);
-      showMessage("login", "Login successful!", false);
-      setTimeout(() => location.href = "dashboard.html", 1000);
-    } else {
-      showMessage("login", data.message || "Login failed", true);
-    }
-  } catch (err) {
-    showMessage("login", "Network error", true);
-  }
-});
+fetch(`${API_BASE}/auth/resend-otp`, {
+  method: "POST",
+  body: JSON.stringify({ email: "your-email@gmail.com" })
+})
