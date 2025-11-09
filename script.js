@@ -1,17 +1,4 @@
 
-function show(id) {
-  document.getElementById("login").style.display = "none";
-  document.getElementById("signup").style.display = "none";
-  document.getElementById(id).style.display = "block";
-
-  const tabs = document.getElementsByClassName("tab");
-  for (let tab of tabs) {
-    tab.className = tab.className.replace(" active", "");
-  }
-  event.target.className += " active";
-}
-
-
 const API_BASE = "https://nutri-smart-akeg.onrender.com";
 
 const signupForm = document.getElementById("signup");
@@ -22,7 +9,6 @@ const registerPassword = document.querySelector(".register-password-input");
 const loginEmail = document.querySelector(".login-email-input");
 const loginPassword = document.querySelector(".login-password-input");
 
-/* ==================== MESSAGE ==================== */
 function showMessage(formId, msg, isError = false) {
   const container = document.querySelector(`#${formId}`);
   let msgEl = container.querySelector(".msg");
@@ -34,9 +20,10 @@ function showMessage(formId, msg, isError = false) {
   msgEl.textContent = msg;
   msgEl.style.color = isError ? "#d32f2f" : "#2e7d32";
   msgEl.style.marginTop = "10px";
+  msgEl.style.display = "block";
 }
 
-
+/* ==================== SIGNUP ==================== */
 signupForm.addEventListener("submit", async function (e) {
   e.preventDefault();
   const name = registerName.value.trim();
@@ -47,34 +34,59 @@ signupForm.addEventListener("submit", async function (e) {
     return showMessage("signup", "All fields required", true);
   }
 
-  const payload = { name, email, password };
-
   try {
     const res = await fetch(`${API_BASE}/auth/register`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload)
+      body: JSON.stringify({ name, email, password })
     });
 
     const data = await res.json();
-    console.log(data);
 
-    // UNCOMMENT THIS (CHANGE #1)
     if (res.ok) {
       localStorage.setItem("pendingEmail", email);
       showMessage("signup", "OTP sent! Redirecting...", false);
-      setTimeout(() => location.href = "verify.html", 1000);
+      setTimeout(() => {
+        window.location.href = "verify.html"; // ← YOUR FILE
+      }, 1500);
     } else {
-      // CHANGE #2: Show the actual errors array
-      showMessage("signup", data.message || data.errors?.join(", ") || "Signup failed", true);
+      showMessage("signup", data.message || "Signup failed", true);
     }
   } catch (err) {
     showMessage("signup", "Network error", true);
-    console.log(err);
   }
 });
 
-fetch(`${API_BASE}/auth/resend-otp`, {
-  method: "POST",
-  body: JSON.stringify({ email: "your-email@gmail.com" })
-})
+/* ==================== LOGIN ==================== */
+loginForm.addEventListener("submit", async function (e) {
+  e.preventDefault();
+  const email = loginEmail.value.trim();
+  const password = loginPassword.value.trim();
+
+  if (!email || !password) {
+    return showMessage("login", "Fill all fields", true);
+  }
+
+  try {
+    const res = await fetch(`${API_BASE}/auth/login`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password })
+    });
+
+    const data = await res.json();
+
+    if (res.ok) {
+      localStorage.setItem("authToken", data.accessToken);
+      localStorage.setItem("user", JSON.stringify({ name: data.name || "User" }));
+      showMessage("login", "Login successful!", false);
+      setTimeout(() => {
+        window.location.href = "dashboard.html";
+      }, 1000);
+    } else {
+      showMessage("login", data.message || "Login failed", true);
+    }
+  } catch (err) {
+    showMessage("login", "Network error", true);
+  }
+});
