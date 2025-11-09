@@ -1,4 +1,21 @@
+/* ==================== TOGGLE BETWEEN LOGIN & SIGNUP ==================== */
+function show(id) {
+  // Hide both forms
+  document.getElementById("login").style.display = "none";
+  document.getElementById("signup").style.display = "none";
 
+  // Show selected form
+  document.getElementById(id).style.display = "block";
+
+  // Update active tab
+  const tabs = document.getElementsByClassName("tab");
+  for (let tab of tabs) {
+    tab.classList.remove("active");
+  }
+  event.target.classList.add("active");
+}
+
+/* ==================== CONFIG & SELECTORS ==================== */
 const API_BASE = "https://nutri-smart-akeg.onrender.com";
 
 const signupForm = document.getElementById("signup");
@@ -9,6 +26,7 @@ const registerPassword = document.querySelector(".register-password-input");
 const loginEmail = document.querySelector(".login-email-input");
 const loginPassword = document.querySelector(".login-password-input");
 
+/* ==================== SHOW MESSAGE ==================== */
 function showMessage(formId, msg, isError = false) {
   const container = document.querySelector(`#${formId}`);
   let msgEl = container.querySelector(".msg");
@@ -21,6 +39,8 @@ function showMessage(formId, msg, isError = false) {
   msgEl.style.color = isError ? "#d32f2f" : "#2e7d32";
   msgEl.style.marginTop = "10px";
   msgEl.style.display = "block";
+  msgEl.style.fontSize = "0.9rem";
+  msgEl.style.textAlign = "center";
 }
 
 /* ==================== SIGNUP ==================== */
@@ -47,17 +67,18 @@ signupForm.addEventListener("submit", async function (e) {
       localStorage.setItem("pendingEmail", email);
       showMessage("signup", "OTP sent! Redirecting...", false);
       setTimeout(() => {
-        window.location.href = "verify.html"; // ← YOUR FILE
+        window.location.href = "verify.html";
       }, 1500);
     } else {
       showMessage("signup", data.message || "Signup failed", true);
     }
   } catch (err) {
-    showMessage("signup", "Network error", true);
+    showMessage("signup", "Network error. Try again.", true);
+    console.error(err);
   }
 });
 
-/* ==================== LOGIN ==================== */
+/* ==================== LOGIN 
 loginForm.addEventListener("submit", async function (e) {
   e.preventDefault();
   const email = loginEmail.value.trim();
@@ -68,7 +89,7 @@ loginForm.addEventListener("submit", async function (e) {
   }
 
   try {
-    const res = await fetch(`${API_BASE}/auth/login`, {
+    const res = await fetch(${API_BASE}/auth/login, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password })

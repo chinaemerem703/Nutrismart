@@ -38,7 +38,18 @@
       <p>We've sent a 6-digit verification code to</p>
       <p class="email" id="user-email">loading...</p>
 
-      <button id="verify-btn">Verify Email</button>
+      <!-- ADDED: 6 OTP INPUT BOXES -->
+      <div class="otp-container">
+        <input type="text" maxlength="1" class="otp-input" />
+        <input type="text" maxlength="1" class="otp-input" />
+        <input type="text" maxlength="1" class="otp-input" />
+        <input type="text" maxlength="1" class="otp-input" />
+        <input type="text" maxlength="1" class="otp-input" />
+        <input type="text" maxlength="1" class="otp-input" />
+      </div>
+
+      <!-- BUTTON WITH CLASS FOR STYLING -->
+      <button id="verify-btn" class="verify-btn">Verify Email</button>
 
       <p>
         Didn't receive the code?<br />
@@ -63,6 +74,7 @@
       <p id="message"></p>
     </div>
 
+    <!-- SCRIPT LOADS AFTER HTML -->
     <script src="verify.js"></script>
   </body>
 </html>
