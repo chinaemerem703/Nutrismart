@@ -78,7 +78,7 @@ signupForm.addEventListener("submit", async function (e) {
   }
 });
 
-/* ==================== LOGIN 
+// login
 loginForm.addEventListener("submit", async function (e) {
   e.preventDefault();
   const email = loginEmail.value.trim();
