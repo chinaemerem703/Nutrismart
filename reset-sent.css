@@ -1,0 +1,118 @@
+
+.sent-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 2rem 1rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.card {
+  background: #fff;
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 25px rgba(0,0,0,.08);
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+
+.icon-check {
+  width: 60px;
+  height: 60px;
+  background: #e8f5e9;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+.icon-check svg {
+  width: 32px;
+  height: 32px;
+  fill: #2e7d32;
+}
+
+h2 {
+  margin: 0 0 .5rem;
+  color: #222;
+  font-size: 1.5rem;
+}
+.subtitle { color: #555; font-size: .95rem; margin: .5rem 0; }
+.email {
+  font-weight: 600;
+  color: #FF6B35;
+  margin: 0 0 1.5rem;
+  word-break: break-all;
+}
+
+.tips {
+  background: #f0f7f0;
+  padding: .9rem 1.2rem;
+  border-radius: 10px;
+  margin: 1.5rem 0;
+  text-align: left;
+  font-size: .88rem;
+  color: #2e7d32;
+}
+.tips ul { margin: 0; padding-left: 1.2rem; }
+.tips li { margin: .4rem 0; }
+
+.btn-primary, .btn-secondary {
+  width: 100%;
+  padding: .9rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin: .5rem 0;
+  transition: .2s;
+}
+.btn-primary {
+  background: #FF6B35;
+  color: white;
+}
+.btn-primary:hover { background: #e55a2b; }
+
+.btn-secondary {
+  background: transparent;
+  color: #FF6B35;
+  border: 1.5px solid #FF6B35;
+}
+.btn-secondary:hover {
+  background: #fff8f5;
+}
+
+/* Toast Notification */
+.toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #2e7d32;
+  color: white;
+  padding: .8rem 1.5rem;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  font-size: .9rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,.15);
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity .4s, transform .4s;
+}
+.toast svg { width: 20px; height: 20px; fill: white; }
+.toast.show { opacity: 1; transform: translateX(-50%) translateY(-10px); }
+.toast.hidden { opacity: 0; }
+
+/* Responsive */
+@media (max-width: 480px) {
+  .card { padding: 2rem 1.5rem; }
+  .icon-check { width: 50px; height: 50px; }
+  .icon-check svg { width: 28px; height: 28px; }
+  h2 { font-size: 1.35rem; }
+}

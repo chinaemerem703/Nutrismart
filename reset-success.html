@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NutriSmart – Password Reset Successful</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="reset-success.css"/>
+</head>
+<body class="carrier">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">
+      <img src="images/landing-page-logo-image.png" alt="NutriSmart" width="40"/>
+      <span>Nutri<span class="span-b">Smart</span></span>
+    </div>
+    <a href="login.html" class="back-home">
+      <img src="images/Vector.png" alt="" class="arrow"/> Back to home
+    </a>
+  </header>
+
+  <!-- SUCCESS CARD -->
+  <main class="success-container">
+    <section class="card">
+      <div class="icon-check">
+        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+      </div>
+
+      <h2>Password Reset Successful!</h2>
+      <p class="message">
+        Your password has been successfully reset. You can now log in with your new password.
+      </p>
+
+      <button id="continue-btn" class="btn-primary">Continue to Login</button>
+    </section>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">
+      <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+      <span>Password reset successful!</span>
+    </div>
+  </main>
+
+  <script src="reset-success.js"></script>
+</body>
+</html>

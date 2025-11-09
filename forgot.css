@@ -1,0 +1,70 @@
+
+.forgot-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  padding: 2rem;
+}
+
+.card {
+  background: #fff;
+  padding: 2rem 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.08);
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+}
+
+.card h2 {
+  margin-bottom: .5rem;
+  color: #222;
+}
+.card p { margin-bottom: 1.5rem; color: #555; font-size: .95rem; }
+
+label {
+  display: block;
+  text-align: left;
+  margin: .5rem 0 .3rem;
+  font-weight: 500;
+  color: #333;
+}
+#reset-email {
+  width: 100%;
+  padding: .9rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+}
+#reset-email:focus { outline: none; border-color: #FF6B35; }
+
+.btn-primary {
+  background: #FF6B35;
+  color: #fff;
+  border: none;
+  padding: .9rem 1.2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100%;
+  margin-top: .5rem;
+}
+.btn-primary:hover { background: #e55a2b; }
+
+.signin-link { margin-top: 1.5rem; font-size: .9rem; }
+.signin-link a { color: #FF6B35; text-decoration: none; font-weight: 500; }
+.signin-link a:hover { text-decoration: underline; }
+
+.msg {
+  margin-top: 1rem;
+  font-size: .9rem;
+  min-height: 1.2rem;
+}
+
+/* Header (reuse from login page) */
+.header { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; }
+.back-home { font-size: .9rem; color: #555; text-decoration: none; display: flex; align-items: center; gap: .4rem; }
+.back-home:hover { color: #333; }

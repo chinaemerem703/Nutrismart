@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NutriSmart – Reset Sent</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+  
+  <link rel="stylesheet" href="reset-sent.css"/>     
+</head>
+<body class="carrier">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">
+      <img src="images/landing-page-logo-image.png" alt="NutriSmart" width="40"/>
+      <span>Nutri<span class="span-b">Smart</span></span>
+    </div>
+    <a href="login.html" class="back-home">
+      <img src="images/Vector.png" alt="" class="arrow"/> Back to home
+    </a>
+  </header>
+
+  <!-- MAIN CARD -->
+  <main class="sent-container">
+    <section class="card">
+      <div class="icon-check">
+        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+      </div>
+
+      <h2>Check Your Email</h2>
+      <p class="subtitle">
+        We’ve sent password reset instructions to
+      </p>
+      <p class="email" id="user-email">loading...</p>
+
+      <div class="tips">
+        <ul>
+          <li>Please check your inbox and spam folder</li>
+          <li>The link will expire in 24 hours</li>
+          <li>For security, we don’t disclose if an email is registered</li>
+        </ul>
+      </div>
+
+      <button id="back-login" class="btn-primary">Back to Login</button>
+      <button id="try-another" class="btn-secondary">Try Another Email</button>
+
+      <!-- Toast Notification -->
+      <div id="toast" class="toast hidden">
+        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+        <span>Password reset instructions sent!</span>
+      </div>
+    </section>
+  </main>
+
+  <script src="reset-sent.js"></script>
+</body>
+</html>

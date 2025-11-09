@@ -11,6 +11,9 @@ function show(id) {
   event.target.className += " active";
 }
 
+/* ==================== CONFIG ==================== */
+const API_BASE = "https://nutri-smart-akeg.onrender.com";
+
 /* ==================== DOM ==================== */
 const signupForm = document.getElementById("signup");
 const loginForm = document.getElementById("login");
@@ -20,7 +23,21 @@ const registerPassword = document.querySelector(".register-password-input");
 const loginEmail = document.querySelector(".login-email-input");
 const loginPassword = document.querySelector(".login-password-input");
 
-/* ==================== AFTER SIGNUP → GO TO VERIFY ==================== */
+/* ==================== MESSAGE ==================== */
+function showMessage(formId, msg, isError = false) {
+  const container = document.querySelector(`#${formId}`);
+  let msgEl = container.querySelector(".msg");
+  if (!msgEl) {
+    msgEl = document.createElement("div");
+    msgEl.className = "msg";
+    container.appendChild(msgEl);
+  }
+  msgEl.textContent = msg;
+  msgEl.style.color = isError ? "#d32f2f" : "#2e7d32";
+  msgEl.style.marginTop = "10px";
+}
+
+/* ==================== SIGNUP (USE /auth/resend-otp) ==================== */
 signupForm.addEventListener("submit", async function (e) {
   e.preventDefault();
   const name = registerName.value.trim();
@@ -28,78 +45,58 @@ signupForm.addEventListener("submit", async function (e) {
   const password = registerPassword.value.trim();
 
   if (!name || !email || !password) {
-    alert("Fill all fields");
-    return;
+    return showMessage("signup", "All fields required", true);
   }
 
   try {
-    const res = await fetch("https://nutri-smart-akeg.onrender.com/auth/register", {
+    // USE /auth/resend-otp FOR SIGNUP TOO
+    const res = await fetch(`${API_BASE}/auth/resend-otp`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, email, password })
+      body: JSON.stringify({ email })
     });
 
-    if (res.status === 201) {
+    const data = await res.json();
+
+    if (res.ok) {
       localStorage.setItem("pendingEmail", email);
-      localStorage.setItem("justSignedUp", "true");
-      alert("OTP sent! Check your email.");
-      window.location.href = "verify-email/verify.html";
+      showMessage("signup", "OTP sent! Redirecting...", false);
+      setTimeout(() => location.href = "verify-email/index.html", 1000);
     } else {
-      const data = await res.json();
-      alert(data.message || "Signup failed");
+      showMessage("signup", data.message || "Failed to send OTP", true);
     }
   } catch (err) {
-    alert("Network error");
+    showMessage("signup", "Network error. Is backend live?", true);
   }
 });
 
-/* ==================== AFTER LOGIN → CHECK IF VERIFIED ==================== */
+/* ==================== LOGIN ==================== */
 loginForm.addEventListener("submit", async function (e) {
   e.preventDefault();
   const email = loginEmail.value.trim();
   const password = loginPassword.value.trim();
 
   if (!email || !password) {
-    alert("Fill all fields");
-    return;
+    return showMessage("login", "Fill all fields", true);
   }
 
   try {
-    const res = await fetch("https://nutri-smart-akeg.onrender.com/auth/login", {
+    const res = await fetch(`${API_BASE}/auth/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password })
     });
+
     const data = await res.json();
 
     if (res.ok) {
       localStorage.setItem("authToken", data.accessToken);
-      localStorage.setItem("userEmail", email);
-
-      // CHECK IF USER IS VERIFIED
-      const verifyRes = await fetch("https://nutri-smart-akeg.onrender.com/auth/check-verified", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email })
-      });
-
-      if (verifyRes.ok) {
-        const v = await verifyRes.json();
-        if (v.verified) {
-          window.location.href = "dashboard.html";
-        } else {
-          localStorage.setItem("pendingEmail", email);
-          window.location.href = "verify-email/verify.html";
-        }
-      } else {
-        // If no check endpoint, assume needs verify
-        localStorage.setItem("pendingEmail", email);
-        window.location.href = "verify-email/verify.html";
-      }
+      showMessage("login", "Login successful!", false);
+      setTimeout(() => location.href = "dashboard.html", 1000);
     } else {
-      alert(data.message || "Login failed");
+      showMessage("login", data.message || "Login failed", true);
     }
   } catch (err) {
-    alert("Network error");
+    showMessage("login", "Network error", true);
   }
 });

@@ -1,0 +1,105 @@
+/* -------------------------------------------------
+   Password Reset Success – Responsive + Toast
+   ------------------------------------------------- */
+.success-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 2rem 1rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.card {
+  background: #fff;
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 25px rgba(0,0,0,.08);
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+}
+
+.icon-check {
+  width: 60px;
+  height: 60px;
+  background: #e8f5e9;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+.icon-check svg {
+  width: 32px;
+  height: 32px;
+  fill: #2e7d32;
+}
+
+h2 {
+  margin: 0 0 .5rem;
+  color: #222;
+  font-size: 1.5rem;
+}
+.message {
+  color: #555;
+  font-size: .95rem;
+  margin: 0 0 1.8rem;
+  line-height: 1.5;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: .9rem;
+  background: #FF6B35;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background .2s;
+}
+.btn-primary:hover {
+  background: #e55a2b;
+}
+
+/* Toast Notification */
+.toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  color: #2e7d32;
+  padding: .8rem 1.5rem;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  font-size: .9rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,.12);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .4s ease;
+  border: 1px solid #e0e0e0;
+}
+.toast.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(-10px);
+}
+.toast svg {
+  width: 20px;
+  height: 20px;
+  fill: #2e7d32;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .card { padding: 2rem 1.5rem; }
+  h2 { font-size: 1.35rem; }
+  .icon-check { width: 50px; height: 50px; }
+  .icon-check svg { width: 28px; height: 28px; }
+}

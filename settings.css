@@ -193,7 +193,21 @@ body {
 .input-full {
   margin-bottom: 24px;
 }
-
+.form-card .msg {
+  margin: 1rem 0;
+  font-size: 0.9rem;
+  text-align: center;
+  min-height: 1.2rem;
+}
+#profile-message {
+  margin: 1rem 0;
+  padding: 0.8rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  text-align: center;
+  display: none;
+  background: #f0f7f0;
+}
 /* SAVE BUTTON */
 .save-btn {
   display: block;
