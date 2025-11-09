@@ -5,13 +5,12 @@ window.addEventListener("load", () => {
   const email = localStorage.getItem("pendingEmail") || "your email";
   document.getElementById("user-email").textContent = email;
 
-  // Show toast
+  
   const toast = document.getElementById("toast");
   toast.classList.remove("hidden");
   setTimeout(() => toast.classList.add("show"), 100);
   setTimeout(() => toast.classList.add("hidden"), 4000);
 
-  // Buttons
   document.getElementById("back-login").onclick = () => {
     location.href = "login.html";
   };

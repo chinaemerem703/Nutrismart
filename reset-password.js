@@ -1,6 +1,4 @@
-/* -------------------------------------------------
-   Reset Password – Strength Meter + Validation + API
-   ------------------------------------------------- */
+
 const API_BASE = "https://nutri-smart-akeg.onrender.com";
 
 const form = document.getElementById("reset-form");
@@ -34,13 +32,12 @@ function evaluateStrength(pw) {
 
   score = Object.values(rules).filter(Boolean).length;
 
-  // Update rules UI
+  
   Object.keys(rules).forEach(rule => {
     const li = rulesList.querySelector(`[data-rule="${rule}"]`);
     li.classList.toggle("valid", rules[rule]);
   });
 
-  // Update meter
   strengthMeter.className = "strength-meter";
   const bar = strengthMeter.querySelector(".bar");
   const text = strengthMeter.querySelector(".text");

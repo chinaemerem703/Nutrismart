@@ -1,4 +1,4 @@
-/* ==================== TABS ==================== */
+
 function show(id) {
   document.getElementById("login").style.display = "none";
   document.getElementById("signup").style.display = "none";
@@ -11,10 +11,9 @@ function show(id) {
   event.target.className += " active";
 }
 
-/* ==================== CONFIG ==================== */
+
 const API_BASE = "https://nutri-smart-akeg.onrender.com";
 
-/* ==================== DOM ==================== */
 const signupForm = document.getElementById("signup");
 const loginForm = document.getElementById("login");
 const registerName = document.getElementById("signupName");
@@ -37,7 +36,7 @@ function showMessage(formId, msg, isError = false) {
   msgEl.style.marginTop = "10px";
 }
 
-/* ==================== SIGNUP (USE /auth/resend-otp) ==================== */
+
 signupForm.addEventListener("submit", async function (e) {
   e.preventDefault();
   const name = registerName.value.trim();
