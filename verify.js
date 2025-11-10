@@ -68,7 +68,7 @@ async function verify() {
     const res = await fetch(`${API_BASE}/auth/verify-otp`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email: userEmail, otp: code })
+      body: JSON.stringify({ email: userEmail,  code })
     });
 
     const data = await res.json();
