@@ -33,7 +33,7 @@ document.getElementById("profile-form").addEventListener("submit", async (e) => 
     activityLevel: document.getElementById("activity-level").value,
   };
 
-  console.log("Sending:", data); // Debug
+  console.log("Sending:", data);
 
   try {
     const response = await fetch(`${API_BASE}/profile/create`, {
@@ -49,6 +49,12 @@ document.getElementById("profile-form").addEventListener("submit", async (e) => 
     console.log("Response:", result);
 
     if (response.ok) {
+      // === SAVE NAME TO LOCALSTORAGE ===
+      localStorage.setItem("user", JSON.stringify({
+        name: data.name,
+        email: data.email
+      }));
+
       showMessage("Profile saved successfully!", false);
       setTimeout(() => {
         window.location.href = "dashboard.html";

@@ -78,7 +78,7 @@ signupForm.addEventListener("submit", async function (e) {
   }
 });
 
-/* ==================== LOGIN  ==================== */
+/* ==================== LOGIN ==================== */
 loginForm.addEventListener("submit", async function (e) {
   e.preventDefault();
   const email = loginEmail.value.trim();
@@ -89,7 +89,7 @@ loginForm.addEventListener("submit", async function (e) {
   }
 
   try {
-    const res = await fetch(`${API_BASE}/auth/login`, {  // ← BACKTICKS ADDED
+    const res = await fetch(`${API_BASE}/auth/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password })
@@ -98,16 +98,26 @@ loginForm.addEventListener("submit", async function (e) {
     const data = await res.json();
 
     if (res.ok) {
-      localStorage.setItem("authToken", data.accessToken);
+      // Backend returns: { code: "token", token: "eyJ...", name: "..." }
+      const token = data.token;
+
+      if (!token) {
+        showMessage("login", "Login failed: No token received", true);
+        return;
+      }
+
+      localStorage.setItem("authToken", token);
       localStorage.setItem("user", JSON.stringify({ name: data.name || "User" }));
+
       showMessage("login", "Login successful!", false);
       setTimeout(() => {
         window.location.href = "dashboard.html";
       }, 1000);
     } else {
-      showMessage("login", data.message || "Login failed", true);
+      showMessage("login", data.message || "Invalid email or password", true);
     }
   } catch (err) {
-    showMessage("login", "Network error", true);
+    console.error("Login error:", err);
+    showMessage("login", "Network error. Please try again.", true);
   }
 });

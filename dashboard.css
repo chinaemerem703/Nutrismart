@@ -327,6 +327,56 @@
   left: 0;
   font-weight: bold;
 }
+ #recommendations-container {
+        margin-top: 1rem;
+      }
+      .rec-card {
+        background: #fff;
+        border-radius: 12px;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      }
+      .rec-card h3 {
+        margin: 0 0 0.5rem;
+        color: #ff6b35;
+      }
+      .meals {
+        margin-top: 1rem;
+      }
+      .meal-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 0.75rem;
+        padding: 0.5rem;
+        background: #f9f9f9;
+        border-radius: 8px;
+      }
+      .meal-img img {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+      .meal-details {
+        flex: 1;
+      }
+      .btn-add {
+        background: #ff6b35;
+        color: #fff;
+        border: none;
+        padding: 0.4rem 0.8rem;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+      .loading,
+      .error {
+        text-align: center;
+        padding: 1rem;
+        color: #666;
+      }
+
 /* ========================================
    RESPONSIVE DASHBOARD STYLES
    ======================================== */
