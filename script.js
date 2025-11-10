@@ -111,7 +111,7 @@ loginForm.addEventListener("submit", async function (e) {
 
       showMessage("login", "Login successful!", false);
       setTimeout(() => {
-        window.location.href = "dashboard.html";
+        window.location.href = "healthprofile.html";
       }, 1000);
     } else {
       showMessage("login", data.message || "Invalid email or password", true);
