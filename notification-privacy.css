@@ -224,3 +224,88 @@ input {
 .btn:hover {
   background: var(--primary-color8);
 }
+@media (max-width: 900px) {
+  .profile-settings-container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .profile-settings-header {
+    padding: 1.5rem;
+    height: auto;
+  }
+
+  .profile-settings-header h2 {
+    font-size: 2.2rem;
+  }
+
+  .profile-settings-title h3 {
+    font-size: 2.4rem;
+  }
+
+  .profile-settings-title p {
+    font-size: 1.6rem;
+  }
+
+  .profile-settings-tabs ul li a {
+    font-size: 1.6rem;
+    padding: 6px 20px;
+  }
+
+  .notification-settings-card {
+    padding: 18px;
+  }
+
+  .notification-settings-card h4 {
+    font-size: 1.9rem;
+  }
+
+  .notification-settings-card p {
+    font-size: 1.5rem;
+  }
+
+  .save-btn {
+    width: 250px;
+    font-size: 1.6rem;
+  }
+}
+@media (max-width: 600px) {
+
+  .profile-settings-container {
+    width: 90%;
+    padding: 15px;
+  }
+  .profile-settings-header {
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    padding: 1rem;
+    gap: 2px;
+  }
+  .back-arrow {
+    font-size: 2rem;
+  }
+
+  .profile-settings-header h2 {
+    font-size: 2rem;
+  }
+
+  .profile-settings-title h3 {
+    font-size: 2.5rem;
+  }
+  .profile-settings-tabs {
+    height: auto;
+    padding: 10px;
+  }
+  .profile-settings-tabs ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .profile-settings-title p {
+    font-size: 1.4rem;
+  }
+
+  .notification-settings-card h4 {
+    font-size: 1.5rem;
+  }
+}

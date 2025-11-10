@@ -1,6 +1,32 @@
-/* -------------------------------------------------
-   Password Reset Success – Responsive + Toast
-   ------------------------------------------------- */
+.header {
+  background: var(--white);
+  /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 20px;
+}
+.back-home {
+  display: flex;
+  justify-content: space-between;
+border: 1px solid #2e7d32;
+ align-items: center;
+  padding: 1rem 14px;
+  border-radius: 10px;
+  text-decoration: none;
+}
+.back-home img {
+   width: 20px;
+  height: 20px;
+}
 .success-container {
   display: flex;
   justify-content: center;
