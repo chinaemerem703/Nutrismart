@@ -1,4 +1,4 @@
-// verify.js — FINAL VERSION
+
 const API_BASE = "https://nutri-smart-akeg.onrender.com";
 const $ = id => document.getElementById(id);
 
@@ -68,7 +68,7 @@ async function verify() {
     const res = await fetch(`${API_BASE}/auth/verify-otp`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email: userEmail, code })
+      body: JSON.stringify({ email: userEmail, otp: code })
     });
 
     const data = await res.json();

@@ -1,12 +1,18 @@
 /* ==================== TOGGLE BETWEEN LOGIN & SIGNUP ==================== */
-function show(id, element) {
+function show(id) {
+  // Hide both forms
   document.getElementById("login").style.display = "none";
   document.getElementById("signup").style.display = "none";
+
+  // Show selected form
   document.getElementById(id).style.display = "block";
 
+  // Update active tab
   const tabs = document.getElementsByClassName("tab");
-  for (let tab of tabs) tab.classList.remove("active");
-  element.classList.add("active");
+  for (let tab of tabs) {
+    tab.classList.remove("active");
+  }
+  event.target.classList.add("active");
 }
 
 /* ==================== CONFIG & SELECTORS ==================== */
@@ -83,7 +89,7 @@ loginForm.addEventListener("submit", async function (e) {
   }
 
   try {
-    const res = await fetch(`${API_BASE}/auth/login`, {  // ← FIXED: Backticks
+    const res = await fetch(`${API_BASE}/auth/login`, {  // ← BACKTICKS ADDED
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password })
@@ -103,6 +109,5 @@ loginForm.addEventListener("submit", async function (e) {
     }
   } catch (err) {
     showMessage("login", "Network error", true);
-    console.error("Login error:", err);
   }
 });
