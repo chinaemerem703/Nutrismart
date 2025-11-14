@@ -41,7 +41,7 @@
         <p>Discover personalized food recommendations tailored to your health and goals. Make informed dietary choices with NutriSmart.</p>
         <div class="hero-buttons">
           <a href="login.html" class="btn-primary">Get Started</a>
-          <a href="#" class="btn-secondary">Explore Food</a>
+         <a href="#" id="explore-food-link" class="btn-secondary">Explore Food</a>
         </div>
       </div>
       <div class="hero-image">
@@ -106,6 +106,24 @@
         toggle.classList.remove('active');
       });
     });
+   document.addEventListener("DOMContentLoaded", function () {
+    const link = document.getElementById("explore-food-link");
+    
+    if (!link) {
+      console.error("Error: #explore-food-link not found in DOM");
+      return;
+    }
+
+    link.addEventListener("click", function (e) {
+      e.preventDefault(); // Prevent # jump
+
+      if (localStorage.getItem("authToken")) {
+        window.location.href = "library.html";
+      } else {
+        window.location.href = "login.html";
+      }
+    });
+  });
   </script>
 </body>
 </html>
