@@ -52,7 +52,7 @@
         <h1>Hello, <span id="userName">User</span>!</h1>
       </div>
 
-      <!-- STATS CARDS (unchanged) -->
+      <!-- STATS CARDS  -->
       <div class="stats-grid">
         <div class="stat-card">
           <p>Daily Goal</p>
@@ -90,10 +90,9 @@
         <!-- DYNAMIC CONTAINER (will be filled by JS) -->
         <div id="recommendations-container"></div>
 
-        <!-- OPTIONAL: keep your static cards as a fallback -->
-        <!--
+        
     <div class="meal-card"> … </div>
-    -->
+    
 
         <a href="suggest.html"
           ><button class="btn-suggestions">
@@ -131,142 +130,194 @@
     </div>
 
     <!-- ==================== JAVASCRIPT ==================== -->
-    <script>
-      const API_BASE = "https://nutri-smart-akeg.onrender.com";
+   <script>
+  const API_BASE = "https://nutri-smart-akeg.onrender.com";
+  const STATE_KEY = "nutrismart_settings_state";
 
-      /* ---------- 1. PROTECT PAGE ---------- */
-      if (!localStorage.getItem("authToken")) {
-        window.location.href = "login.html";
-      }
-
-      function getToken() {
-        return localStorage.getItem("authToken");
-      }
-
-      /* ---------- 2. USER NAME ---------- */
-      function loadUserName() {
-        const saved = localStorage.getItem("user");
-        if (saved) {
-          const user = JSON.parse(saved);
-          document.getElementById("userName").textContent = user.name || "User";
-          return;
-        }
-
-        // fallback – fetch from profile
-        fetch(`${API_BASE}/profile/get`, {
-          headers: { Authorization: `Bearer ${getToken()}` },
-        })
-          .then((r) => (r.ok ? r.json() : Promise.reject()))
-          .then((data) => {
-            if (data.name) {
-              document.getElementById("userName").textContent = data.name;
-              localStorage.setItem("user", JSON.stringify({ name: data.name }));
-            }
-          })
-          .catch(() => {});
-      }
-
-      /* ---------- 3. RECOMMENDATIONS ---------- */
-     async function loadRecommendations() {
-  const container = document.getElementById("recommendations-container");
-  if (!container) return;
-
-  container.innerHTML = "<p class='loading'>Loading recommendations…</p>";
-
-  const token = getToken();
-  if (!token) {
-    container.innerHTML = "<p>Please <a href='login.html'>log in</a> again.</p>";
-    return;
+  
+  if (!localStorage.getItem("authToken")) {
+    window.location.href = "login.html";
   }
 
-  try {
-    const res = await fetch(`${API_BASE}/meals/recommendations`, {
-      headers: { "Authorization": `Bearer ${token}` }
-    });
+  function getToken() {
+    return localStorage.getItem("authToken");
+  }
 
-    const data = await res.json();
-
-    if (res.ok) {
-      renderRecommendations(data.recommendations || []);
-    } else {
-      container.innerHTML = `<p class="error">Error: ${data.message || "Failed to load"}</p>`;
+  
+  function loadUserName() {
+    const saved = localStorage.getItem("user");
+    if (saved) {
+      const user = JSON.parse(saved);
+      document.getElementById("userName").textContent = user.name || "User";
+      return;
     }
-  } catch (err) {
-    console.error(err);
-    container.innerHTML = `<p class="error">Network error – try again later.</p>`;
-  }
-}
 
-      function renderRecommendations(recs) {
-        const container = document.getElementById("recommendations-container");
-
-        if (!recs.length) {
-          container.innerHTML = "<p>No recommendations yet.</p>";
-          return;
+    fetch(`${API_BASE}/profile/get`, {
+      headers: { Authorization: `Bearer ${getToken()}` },
+    })
+      .then((r) => (r.ok ? r.json() : Promise.reject()))
+      .then((data) => {
+        if (data.name) {
+          document.getElementById("userName").textContent = data.name;
+          localStorage.setItem("user", JSON.stringify({ name: data.name }));
         }
+      })
+      .catch(() => {});
+  }
 
-        const html = recs
-          .map(
-            (rec) => `
-      <div class="rec-card">
-        <h3>${rec.condition || "Condition"}</h3>
-        <p><strong>Goal:</strong> ${rec.description || "-"}</p>
-        <p><strong>Recommended:</strong> ${rec.recommendedFoods || "-"}</p>
-        <p><strong>Avoid:</strong> ${rec.restrictedFoods || "-"}</p>
+  
+  const CONDITION_MAP = {
+    "High Blood Pressure": "Hypertension",
+    "Heart Disease": "Heart Disease",
+    "High Cholesterol": "High Cholesterol",
+    "Obesity": "Obesity",
+    "Diabetes": "Diabetes",
+    "Ulcer": "Ulcer",
+    "Anaemia": "Anaemia"
+  };
 
-        ${
-          rec.matchedMeals?.length
-            ? `
-          <div class="meals">
-            ${rec.matchedMeals
-              .map(
-                (m) => `
-              <div class="meal-card">
-                <img src="${m.image || "images/jollof-rice.png"}" alt="${
-                  m.name
-                }">
-                <div class="meal-info">
-                  <h4>${m.name}</h4>
-                  <p>${m.calories} kcal • ${
-                  m.protein ? m.protein + "g protein" : "Protein-rich"
-                }</p>
-                </div>
-                <button class="btn-add">suitable</button>
-              </div>
-            `
-              )
-              .join("")}
+  function toBackendCondition(uiName) {
+    return CONDITION_MAP[uiName.trim()] || uiName.trim();
+  }
+
+  function toUICondition(backendName) {
+    return Object.keys(CONDITION_MAP).find(key => CONDITION_MAP[key] === backendName) || backendName;
+  }
+
+  
+  const LOCAL_RECS = {
+    "Heart Disease": {
+      condition: "Heart Disease",
+      description: "Supports heart health and reduces risk",
+      recommendedNutrients: "Omega-3, fiber, potassium",
+      restrictedNutrients: "Saturated fats, sodium",
+      recommendedFoods: "Salmon, walnuts, oats, berries",
+      restrictedFoods: "Red meat, fried foods, processed snacks"
+    },
+    "High Cholesterol": {
+      condition: "High Cholesterol",
+      description: "Helps lower LDL cholesterol",
+      recommendedNutrients: "Soluble fiber, plant sterols",
+      restrictedNutrients: "Trans fats, saturated fats",
+      recommendedFoods: "Oats, beans, apples, almonds",
+      restrictedFoods: "Butter, pastries, full-fat dairy"
+    }
+  };
+
+  /* ----------  LOAD RECOMMENDATIONS ---------- */
+  async function loadRecommendations() {
+    const container = document.getElementById("recommendations-container");
+    if (!container) return;
+
+    container.innerHTML = "<p class='loading'>Loading your personalized plan…</p>";
+
+    const state = JSON.parse(localStorage.getItem(STATE_KEY) || "{}");
+    const uiConditions = state.conditions
+      ? state.conditions.split(',').map(s => s.trim()).filter(Boolean)
+      : [];
+
+    if (!uiConditions.length) {
+      container.innerHTML = "<p>Complete your health profile to get recommendations.</p>";
+      return;
+    }
+
+    try {
+      const res = await fetch(`${API_BASE}/meals/recommendations`, {
+        headers: { "Authorization": `Bearer ${getToken()}` }
+      });
+      const data = await res.json();
+
+      let backendRecs = [];
+      if (res.ok && Array.isArray(data.recommendations)) {
+        backendRecs = data.recommendations.map(rec => ({
+          ...rec,
+          condition: toUICondition(rec.condition) 
+        }));
+      }
+
+      
+      const finalRecs = uiConditions.map(cond => {
+        const backendRec = backendRecs.find(r => r.condition === cond);
+        if (backendRec) return backendRec;
+        return LOCAL_RECS[cond] ? { ...LOCAL_RECS[cond], condition: cond } : null;
+      }).filter(Boolean);
+
+      renderRecommendations(finalRecs.length > 0 ? finalRecs : []);
+
+    } catch (err) {
+      console.error("Network error:", err);
+      // Fallback to local only
+      const localOnly = uiConditions.map(cond => LOCAL_RECS[cond] ? { ...LOCAL_RECS[cond], condition: cond } : null).filter(Boolean);
+      renderRecommendations(localOnly.length > 0 ? localOnly : []);
+      container.innerHTML = `<p class="error">Using offline data (check internet).</p>` + container.innerHTML;
+    }
+  }
+
+  /* ---------- 6. RENDER RECOMMENDATIONS ---------- */
+  function renderRecommendations(recs) {
+    const container = document.getElementById("recommendations-container");
+
+    if (!recs.length) {
+      container.innerHTML = "<p>No recommendations available.</p>";
+      return;
+    }
+
+    const html = recs
+      .map(
+        (rec) => `
+          <div class="rec-card">
+            <h3>${rec.condition}</h3>
+            <p><strong>Goal:</strong> ${rec.description || "-"}</p>
+            <p><strong>Recommended:</strong> ${rec.recommendedFoods || "-"}</p>
+            <p><strong>Avoid:</strong> ${rec.restrictedFoods || "-"}</p>
+
+            ${
+              rec.matchedMeals?.length
+                ? `
+                  <div class="meals">
+                    ${rec.matchedMeals
+                      .map(
+                        (m) => `
+                          <div class="meal-card">
+                            <img src="${m.image || "images/jollof-rice.png"}" alt="${m.name}">
+                            <div class="meal-info">
+                              <h4>${m.name}</h4>
+                              <p>${m.calories} kcal • ${m.protein ? m.protein + "g protein" : "Protein-rich"}</p>
+                            </div>
+                            <button class="btn-add">suitable</button>
+                          </div>
+                        `
+                      )
+                      .join("")}
+                  </div>
+                `
+                : ""
+            }
           </div>
         `
-            : ""
-        }
-      </div>
-    `
-          )
-          .join("");
+      )
+      .join("");
 
-        container.innerHTML = html;
-      }
+    container.innerHTML = html;
+  }
 
-      /* ---------- 4. LOGOUT MODAL ---------- */
-      function showLogoutModal() {
-        document.getElementById("logoutModal").style.display = "flex";
-      }
-      function hideLogoutModal() {
-        document.getElementById("logoutModal").style.display = "none";
-      }
-      function confirmLogout() {
-        hideLogoutModal();
-        localStorage.removeItem("authToken");
-        localStorage.removeItem("user");
-        window.location.href = "login.html";
-      }
+  /* ---------- 7. LOGOUT MODAL ---------- */
+  function showLogoutModal() {
+    document.getElementById("logoutModal").style.display = "flex";
+  }
+  function hideLogoutModal() {
+    document.getElementById("logoutModal").style.display = "none";
+  }
+  function confirmLogout() {
+    hideLogoutModal();
+    localStorage.removeItem("authToken");
+    localStorage.removeItem("user");
+    window.location.href = "login.html";
+  }
 
-      /* ---------- 5. PAGE LOAD ---------- */
-      document.addEventListener("DOMContentLoaded", () => {
-        loadUserName();
-        loadRecommendations();
-      });
-    </script>
-  </body>
-</html>
+  /* ---------- 8. PAGE LOAD ---------- */
+  document.addEventListener("DOMContentLoaded", () => {
+    loadUserName();
+    loadRecommendations();
+  });
+</script>

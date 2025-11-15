@@ -1,8 +1,4 @@
-// healthprofile.js
-// Complete, production-ready script for the 3-step health profile flow
-// Fixed for 500 error: arrays → comma strings
-// One-time appearance: skips if profileCompleted in localStorage
-// Updated endpoint: POST /profile/create (full profile merge)
+
 
 const API_BASE = "https://nutri-smart-akeg.onrender.com";
 const COMPLETED_KEY = "profileCompleted"; // For one-time check
@@ -121,10 +117,7 @@ else if (document.querySelector('input[name="conditions"]')) {
 }
 
 // -------------------------------------------------
-// STEP 3: healthprofile3.html (Allergies & Preferences + Final Submit)
-// -------------------------------------------------
-// -------------------------------------------------
-// STEP 3: healthprofile3.html (Allergies & Preferences + Final Submit)
+// STEP 3: healthprofile3.html 
 // -------------------------------------------------
 else if (document.querySelector('input[name="allergies"]')) {
   document.addEventListener("DOMContentLoaded", () => {
@@ -151,21 +144,10 @@ else if (document.querySelector('input[name="allergies"]')) {
       const dietary = Array.from(document.querySelectorAll('input[name="dietary"]:checked'))
         .map(cb => cb.value);
 
-      const rawProfile = {
+      const finalProfile = {
         ...loadProfile(),
         allergies,
         dietaryGoal: dietary.length > 0 ? dietary[0] : null,
-      };
-
-      // CONVERT ARRAYS TO COMMA STRINGS
-      const finalProfile = {
-        ...rawProfile,
-        conditions: Array.isArray(rawProfile.conditions) 
-          ? rawProfile.conditions.filter(Boolean).join(', ') 
-          : rawProfile.conditions || null,
-        allergies: Array.isArray(rawProfile.allergies) 
-          ? rawProfile.allergies.filter(Boolean).join(', ') 
-          : rawProfile.allergies || null,
       };
 
       const token = getToken();
@@ -176,7 +158,7 @@ else if (document.querySelector('input[name="allergies"]')) {
       }
 
       try {
-        console.log("Sending to backend (STRING format):", finalProfile);
+        console.log("Sending profile to backend:", finalProfile);
         const res = await fetch(`${API_BASE}/profile/create`, {
           method: "POST",
           headers: {
@@ -199,8 +181,8 @@ else if (document.querySelector('input[name="allergies"]')) {
           alert(result.message || "Failed to save profile. Please try again.");
         }
       } catch (err) {
-        console.error("Network error:", err);
-        alert("Network error. Please check your connection.");
+        console.error("Network or server error:", err);
+        alert("Network error. Please check your connection and try again.");
       }
     });
 
